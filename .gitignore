@@ -8,7 +8,7 @@ env/
 *.pyc
 
 # SQLite DB (don’t push your local dev DB)
-backend/*.db
+# backend/*.db
 
 # IDE/editor configs
 .vscode/
