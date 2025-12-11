@@ -77,3 +77,4 @@ async def get_current_market_price(produce_name: str) -> Optional[float]:
 #             print(f"{name!r} price:", p)
 
 #     asyncio.run(test())
+#rehenmanoy
