@@ -1,1 +1,0 @@
-# StorageBooking schemas
