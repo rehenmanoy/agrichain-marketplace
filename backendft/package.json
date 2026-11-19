@@ -1,0 +1,50 @@
+{
+  "name": "backendft",
+  "version": "1.0.0",
+  "description": "AgriChain backend: farm-to-market marketplace API (Express + PostgreSQL)",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "db:migrate": "node scripts/migrate.js",
+    "db:seed": "node scripts/seed.js",
+    "db:reset": "node scripts/reset.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "prices:fetch": "node scripts/fetch-prices.js"
+  },
+  "keywords": [],
+  "author": "rehen,amal",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.13.4",
+    "bcryptjs": "^3.0.3",
+    "cheerio": "^1.2.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.1",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "morgan": "^1.12.1",
+    "multer": "^2.5.0",
+    "node-cron": "^4.6.0",
+    "pg": "^8.18.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.13.0",
+    "globals": "^17.13.0",
+    "nodemon": "^3.1.14",
+    "prettier": "^3.9.10",
+    "supertest": "^7.3.1",
+    "vitest": "^5.0.5"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

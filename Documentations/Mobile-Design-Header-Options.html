@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AgriChain Header and footer options</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@400;500;700&family=Inter:wght@400;500;600&family=Lora:wght@500;600&display=swap">
+<style>
+:root{--bg:#EAF1E4;--card:#fff;--line:#DCE6D2;--forest:#1E4D2B;--leaf:#4A7C3A;--deep:#173D22;--ink:#1C211B;--muted:#5B6158;--amber:#8A5A00;--sky:#175CD3;--danger:#B42318;--lime:#8CC63F}
+*{box-sizing:border-box}
+body{margin:0;background:#F6F7F3;font-family:Inter,sans-serif;color:var(--ink)}
+header.top{padding:28px 24px 8px;max-width:1500px;margin:0 auto}
+header.top h1{font-family:Lora,serif;font-size:28px;margin:0 0 6px;color:var(--forest)}
+header.top p{margin:0;color:var(--muted);font-size:14px;max-width:760px;line-height:1.5}
+nav.jump{max-width:1500px;margin:12px auto 0;padding:0 24px;display:flex;gap:8px;flex-wrap:wrap}
+nav.jump a{font-size:13px;text-decoration:none;color:var(--forest);border:1px solid var(--line);background:#fff;padding:6px 12px;border-radius:99px}
+section.role{max-width:1500px;margin:0 auto;padding:28px 24px 8px}
+section.role h2{font-family:Lora,serif;font-size:22px;color:var(--forest);margin:0 0 4px}
+section.role h3{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:22px 0 10px;font-weight:500}
+.row3{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start}
+figure{margin:0}
+figcaption{font-size:13px;color:var(--muted);margin:0 0 8px 4px}
+.ph{width:320px;background:var(--bg);border-radius:28px;border:1px solid var(--line);overflow:hidden;font-size:14px;line-height:1.4}
+.ph.ml{font-family:Inter,'Anek Malayalam',sans-serif;font-size:13px;line-height:1.45}
+.tb{background:#fff;border-bottom:1px solid var(--line);padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.lg{display:inline-flex;align-items:center;gap:8px;font-family:Lora,serif;font-size:20px;font-weight:600;color:var(--forest)}
+.mk{width:32px;height:32px;border-radius:8px;background:var(--forest);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:19px}
+.band .mk,.dk .mk{background:#fff;color:var(--forest)}
+.tg{display:inline-flex;border:1px solid rgba(255,255,255,.55);border-radius:99px;padding:2px;font:600 11px Inter,sans-serif;line-height:1}
+.tg span{padding:6px 10px;border-radius:99px;color:#fff}
+.tg .on{background:#fff;color:var(--forest)}
+.ic{font-size:22px;color:var(--forest);position:relative;margin-left:14px}
+.bd{position:absolute;top:-6px;right:-8px;background:var(--danger);color:#fff;font:600 10px Inter;border-radius:99px;min-width:16px;height:16px;display:flex;align-items:center;justify-content:center;padding:0 4px}
+.pad{padding:18px 20px 16px}
+.h{font-size:18px;font-weight:600;font-family:Lora,serif}
+.ml .h{font-family:Lora,'Anek Malayalam',serif;font-weight:700}
+.c{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:12px}
+.n{font-family:Inter,sans-serif;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+.s{font-size:12px;color:var(--muted)}.ml .s{font-size:11px}
+.b{font-weight:600}.ml .b{font-weight:700}
+.rw{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.bs{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.pl{font-size:11px;font-weight:500;padding:2px 10px;border-radius:99px;white-space:nowrap;background:var(--bg);color:var(--forest)}
+.pl.amber{background:#FFF4DC;color:var(--amber)}.pl.sky{background:#E8F0FD;color:var(--sky)}.pl.grey{background:#F1F1EE;color:var(--muted)}
+.bt{flex:1;min-height:44px;border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;font-weight:500;line-height:1.3;color:var(--forest);padding:0 4px;background:#fff}
+.bt.red{color:var(--danger)}.bt.amber{color:var(--amber)}
+.pb{height:44px;background:var(--forest);color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500}
+.ml .pb{font-size:13px}
+.bar{display:flex;gap:8px;margin-top:12px}
+.in{height:44px;border:1px solid var(--line);border-radius:8px;background:#fff;display:flex;align-items:center;padding:0 12px;color:var(--muted);margin-top:6px}
+.tabs{background:#fff;border-top:1px solid var(--line);height:58px;display:flex;align-items:center;font-size:11px;color:var(--muted)}
+.tabs div{text-align:center;flex:1}.tabs i{font-size:22px;display:block}.tabs .on{color:var(--forest);font-weight:600}
+.strip{background:var(--deep);color:#fff;border-radius:16px;padding:12px 16px;margin-top:12px;background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 2px,transparent 2px 14px)}
+.strip .it{display:flex;gap:0;margin-top:6px;white-space:nowrap;overflow:hidden;font-size:13px}
+.strip .it span{padding:0 10px;border-right:1px solid rgba(255,255,255,.18)}.strip .it span:first-child{padding-left:0}.strip .it span:last-child{border:0}
+.up{color:var(--lime)}
+.st{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.st .c{margin:0;padding:12px 14px}
+.al{background:#FFF4DC;border:1px solid #F0DCA8;color:var(--amber);border-radius:12px;padding:10px 14px;margin-top:8px}
+.seg{display:flex;background:#fff;border:1px solid var(--line);border-radius:99px;padding:3px;margin-top:12px}.seg div{flex:1;text-align:center;padding:6px 0;border-radius:99px;font-size:12px}.seg .on{background:var(--forest);color:#fff;font-weight:600}
+.bars{display:flex;align-items:flex-end;justify-content:space-between;height:56px;margin-top:10px}.bars div{width:26px;background:var(--line);border-radius:4px}.bars div:last-child{background:var(--leaf)}
+.rt{display:flex;gap:12px;margin:14px 0}.ln{display:flex;flex-direction:column;align-items:center;padding-top:6px}.d1{width:10px;height:10px;border-radius:50%;background:var(--leaf)}.d2{width:10px;height:10px;border-radius:50%;border:2px solid var(--forest)}.ln i{width:2px;flex:1;background:var(--line);margin:3px 0}
+.rt .col{flex:1;display:flex;flex-direction:column;gap:12px}
+.step{display:flex;align-items:center;gap:10px}.step b{width:32px;height:32px;border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:500;color:var(--forest)}
+.ch{display:inline-block;border:1px solid var(--line);background:#fff;border-radius:99px;padding:6px 12px;font-size:12px;margin:8px 6px 0 0}.ch.on{background:var(--forest);color:#fff;border-color:var(--forest)}
+.pill{font-size:11px;border:1px solid var(--line);border-radius:99px;padding:2px 8px;background:#fff;font-weight:600;color:var(--forest)}.pill.on{background:var(--forest);color:#fff}
+.band{background:var(--deep);color:#fff;padding:26px 20px 22px;background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 2px,transparent 2px 14px)}
+.role{}
+.rc{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}.rc>div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 10px;display:grid;grid-template-columns:22px 1fr;column-gap:8px;align-items:center;min-height:52px}.rc>div i{grid-row:1/3;font-size:20px!important}.rc>div .s{font-size:11px;line-height:1.3}.rc>div .b{font-size:13px;line-height:1.25}
+footer{max-width:1500px;margin:30px auto;padding:0 24px;color:var(--muted);font-size:13px;line-height:1.5}
+
+.dk .tb{background:var(--deep);border-bottom:0;background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 2px,transparent 2px 14px)}
+.dk .tb .lg{color:#fff}.dk .tb .ic{color:#fff}.dk .tb .bd{box-shadow:0 0 0 2px var(--deep)}
+.dk .tabs{background:var(--deep);border-top:0;color:rgba(255,255,255,.7);background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 2px,transparent 2px 14px)}
+.dk .tabs .on{color:#fff;font-weight:600}.dk .tabs .on i{color:var(--lime)}
+.dk .strip{background:var(--forest)}
+</style>
+</head>
+<body>
+<header class="top"><h1>Header and footer: two options</h1><p><b>A</b> is the current design: white top bar and white tab bar. <b>B</b> uses the same dark green striped background as the login header, on both the top bar and the tab bar (active tab white with a lime icon). Everything else is identical, so only the bars differ. Pick one and I will update the design.</p></header>
+<section class="role">
+<h3>Buyer Home</h3>
+<div class="row3">
+<figure><figcaption>A. White bars (current), English</figcaption>
+<div class="ph">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><span><i class="ti ti-bell ic"><span class="bd">2</span></i><i class="ti ti-shopping-cart ic"><span class="bd">3</span></i></span></div>
+  <div class="pad">
+    <div class="h">Good morning, Anu.</div><div style="margin-top:2px">One order is on the way.</div>
+    <div class="strip"><div class="s" style="color:#fff;opacity:.85">Today's market price, per kg</div><div class="it"><span>Tomato <b class="n" style="font-size:13px">₹46</b> <b class="up">▲</b></span><span>Banana <b class="n" style="font-size:13px">₹35</b></span><span>Onion <b class="n" style="font-size:13px">₹28</b></span></div></div>
+    <div class="b" style="margin-top:18px">Farmers near you</div>
+    <div class="c" style="margin-top:8px"><div class="rw"><div><div class="b">Mani</div><div class="s">Kodakara</div></div><div class="s"><span class="n" style="font-size:13px">4.8</span> (12) · 4 items</div></div></div>
+    <div class="c" style="margin-top:8px"><div class="rw"><div><div class="b">Suresh</div><div class="s">Chalakudy</div></div><div class="s"><span class="n" style="font-size:13px">4.5</span> (8) · 3 items</div></div></div>
+  </div>
+  <div class="tabs"><div class="on"><i class="ti ti-home"></i>Home</div><div><i class="ti ti-building-store"></i>Shop</div><div><i class="ti ti-receipt"></i>Orders</div><div><i class="ti ti-user"></i>Account</div></div>
+</div></figure>
+<figure><figcaption>A. White bars (current), Malayalam</figcaption>
+<div class="ph ml">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><span><i class="ti ti-bell ic"><span class="bd">2</span></i><i class="ti ti-shopping-cart ic"><span class="bd">3</span></i></span></div>
+  <div class="pad">
+    <div class="h">സുപ്രഭാതം, അനു.</div><div style="margin-top:2px">ഒരു ഓർഡർ നടക്കുന്നു.</div>
+    <div class="strip"><div class="s" style="color:#fff;opacity:.85">ഇന്നത്തെ വിപണി വില, കിലോയ്ക്ക്</div><div class="it"><span>തക്കാളി <b class="n" style="font-size:13px">₹46</b> <b class="up">▲</b></span><span>വാഴപ്പഴം <b class="n" style="font-size:13px">₹35</b></span><span>സവാള <b class="n" style="font-size:13px">₹28</b></span></div></div>
+    <div class="b" style="margin-top:18px">അടുത്തുള്ള കർഷകർ</div>
+    <div class="c" style="margin-top:8px"><div class="rw"><div><div class="b">മണി</div><div class="s">കൊടകര</div></div><div class="s"><span class="n" style="font-size:13px">4.8</span> (12) · 4 ഇനങ്ങൾ</div></div></div>
+    <div class="c" style="margin-top:8px"><div class="rw"><div><div class="b">സുരേഷ്</div><div class="s">ചാലക്കുടി</div></div><div class="s"><span class="n" style="font-size:13px">4.5</span> (8) · 3 ഇനങ്ങൾ</div></div></div>
+  </div>
+  <div class="tabs"><div class="on"><i class="ti ti-home"></i>ഹോം</div><div><i class="ti ti-building-store"></i>കട</div><div><i class="ti ti-receipt"></i>ഓർഡർ</div><div><i class="ti ti-user"></i>അക്കൗണ്ട്</div></div>
+</div></figure>
+
+<figure><figcaption>B. Dark pattern bars, English</figcaption>
+<div class="ph dk">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><span><i class="ti ti-bell ic"><span class="bd">2</span></i><i class="ti ti-shopping-cart ic"><span class="bd">3</span></i></span></div>
+  <div class="pad">
+    <div class="h">Good morning, Anu.</div><div style="margin-top:2px">One order is on the way.</div>
+    <div class="strip"><div class="s" style="color:#fff;opacity:.85">Today's market price, per kg</div><div class="it"><span>Tomato <b class="n" style="font-size:13px">₹46</b> <b class="up">▲</b></span><span>Banana <b class="n" style="font-size:13px">₹35</b></span><span>Onion <b class="n" style="font-size:13px">₹28</b></span></div></div>
+    <div class="b" style="margin-top:18px">Farmers near you</div>
+    <div class="c" style="margin-top:8px"><div class="rw"><div><div class="b">Mani</div><div class="s">Kodakara</div></div><div class="s"><span class="n" style="font-size:13px">4.8</span> (12) · 4 items</div></div></div>
+    <div class="c" style="margin-top:8px"><div class="rw"><div><div class="b">Suresh</div><div class="s">Chalakudy</div></div><div class="s"><span class="n" style="font-size:13px">4.5</span> (8) · 3 items</div></div></div>
+  </div>
+  <div class="tabs"><div class="on"><i class="ti ti-home"></i>Home</div><div><i class="ti ti-building-store"></i>Shop</div><div><i class="ti ti-receipt"></i>Orders</div><div><i class="ti ti-user"></i>Account</div></div>
+</div></figure>
+<figure><figcaption>B. Dark pattern bars, Malayalam</figcaption>
+<div class="ph ml dk">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><span><i class="ti ti-bell ic"><span class="bd">2</span></i><i class="ti ti-shopping-cart ic"><span class="bd">3</span></i></span></div>
+  <div class="pad">
+    <div class="h">സുപ്രഭാതം, അനു.</div><div style="margin-top:2px">ഒരു ഓർഡർ നടക്കുന്നു.</div>
+    <div class="strip"><div class="s" style="color:#fff;opacity:.85">ഇന്നത്തെ വിപണി വില, കിലോയ്ക്ക്</div><div class="it"><span>തക്കാളി <b class="n" style="font-size:13px">₹46</b> <b class="up">▲</b></span><span>വാഴപ്പഴം <b class="n" style="font-size:13px">₹35</b></span><span>സവാള <b class="n" style="font-size:13px">₹28</b></span></div></div>
+    <div class="b" style="margin-top:18px">അടുത്തുള്ള കർഷകർ</div>
+    <div class="c" style="margin-top:8px"><div class="rw"><div><div class="b">മണി</div><div class="s">കൊടകര</div></div><div class="s"><span class="n" style="font-size:13px">4.8</span> (12) · 4 ഇനങ്ങൾ</div></div></div>
+    <div class="c" style="margin-top:8px"><div class="rw"><div><div class="b">സുരേഷ്</div><div class="s">ചാലക്കുടി</div></div><div class="s"><span class="n" style="font-size:13px">4.5</span> (8) · 3 ഇനങ്ങൾ</div></div></div>
+  </div>
+  <div class="tabs"><div class="on"><i class="ti ti-home"></i>ഹോം</div><div><i class="ti ti-building-store"></i>കട</div><div><i class="ti ti-receipt"></i>ഓർഡർ</div><div><i class="ti ti-user"></i>അക്കൗണ്ട്</div></div>
+</div></figure></div>
+<h3>Buyer Shop</h3>
+<div class="row3">
+<figure><figcaption>A. White bars (current), English</figcaption>
+<div class="ph">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><span><i class="ti ti-bell ic"></i><i class="ti ti-shopping-cart ic"><span class="bd">3</span></i></span></div>
+  <div class="pad">
+    <div class="h">Shop</div>
+    <div class="in" style="margin-top:10px"><i class="ti ti-search" style="margin-right:8px"></i>Search vegetables or fruits</div>
+    <div><span class="ch on">All</span><span class="ch">Vegetables</span><span class="ch">Fruits</span></div>
+    <div class="c"><div class="rw"><div><div class="b">Tomato</div><div class="s">Mani · 120 kg available</div></div><div class="n">₹48<span class="s">/kg</span></div></div><div class="pb" style="margin-top:12px">Add to cart</div></div>
+    <div class="c"><div class="rw"><div><div class="b">Banana</div><div class="s">Suresh · 60 kg available</div></div><div class="n">₹35<span class="s">/kg</span></div></div><div class="pb" style="margin-top:12px">Add to cart</div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>Home</div><div class="on"><i class="ti ti-building-store"></i>Shop</div><div><i class="ti ti-receipt"></i>Orders</div><div><i class="ti ti-user"></i>Account</div></div>
+</div></figure>
+<figure><figcaption>A. White bars (current), Malayalam</figcaption>
+<div class="ph ml">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><span><i class="ti ti-bell ic"></i><i class="ti ti-shopping-cart ic"><span class="bd">3</span></i></span></div>
+  <div class="pad">
+    <div class="h">കട</div>
+    <div class="in" style="margin-top:10px"><i class="ti ti-search" style="margin-right:8px"></i>പച്ചക്കറിയോ പഴമോ തിരയുക</div>
+    <div><span class="ch on">എല്ലാം</span><span class="ch">പച്ചക്കറികൾ</span><span class="ch">പഴങ്ങൾ</span></div>
+    <div class="c"><div class="rw"><div><div class="b">തക്കാളി</div><div class="s">മണി · 120 കിലോ ലഭ്യം</div></div><div class="n">₹48<span class="s">/കിലോ</span></div></div><div class="pb" style="margin-top:12px">കാർട്ടിൽ ചേർക്കുക</div></div>
+    <div class="c"><div class="rw"><div><div class="b">വാഴപ്പഴം</div><div class="s">സുരേഷ് · 60 കിലോ ലഭ്യം</div></div><div class="n">₹35<span class="s">/കിലോ</span></div></div><div class="pb" style="margin-top:12px">കാർട്ടിൽ ചേർക്കുക</div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>ഹോം</div><div class="on"><i class="ti ti-building-store"></i>കട</div><div><i class="ti ti-receipt"></i>ഓർഡർ</div><div><i class="ti ti-user"></i>അക്കൗണ്ട്</div></div>
+</div></figure>
+
+<figure><figcaption>B. Dark pattern bars, English</figcaption>
+<div class="ph dk">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><span><i class="ti ti-bell ic"></i><i class="ti ti-shopping-cart ic"><span class="bd">3</span></i></span></div>
+  <div class="pad">
+    <div class="h">Shop</div>
+    <div class="in" style="margin-top:10px"><i class="ti ti-search" style="margin-right:8px"></i>Search vegetables or fruits</div>
+    <div><span class="ch on">All</span><span class="ch">Vegetables</span><span class="ch">Fruits</span></div>
+    <div class="c"><div class="rw"><div><div class="b">Tomato</div><div class="s">Mani · 120 kg available</div></div><div class="n">₹48<span class="s">/kg</span></div></div><div class="pb" style="margin-top:12px">Add to cart</div></div>
+    <div class="c"><div class="rw"><div><div class="b">Banana</div><div class="s">Suresh · 60 kg available</div></div><div class="n">₹35<span class="s">/kg</span></div></div><div class="pb" style="margin-top:12px">Add to cart</div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>Home</div><div class="on"><i class="ti ti-building-store"></i>Shop</div><div><i class="ti ti-receipt"></i>Orders</div><div><i class="ti ti-user"></i>Account</div></div>
+</div></figure>
+<figure><figcaption>B. Dark pattern bars, Malayalam</figcaption>
+<div class="ph ml dk">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><span><i class="ti ti-bell ic"></i><i class="ti ti-shopping-cart ic"><span class="bd">3</span></i></span></div>
+  <div class="pad">
+    <div class="h">കട</div>
+    <div class="in" style="margin-top:10px"><i class="ti ti-search" style="margin-right:8px"></i>പച്ചക്കറിയോ പഴമോ തിരയുക</div>
+    <div><span class="ch on">എല്ലാം</span><span class="ch">പച്ചക്കറികൾ</span><span class="ch">പഴങ്ങൾ</span></div>
+    <div class="c"><div class="rw"><div><div class="b">തക്കാളി</div><div class="s">മണി · 120 കിലോ ലഭ്യം</div></div><div class="n">₹48<span class="s">/കിലോ</span></div></div><div class="pb" style="margin-top:12px">കാർട്ടിൽ ചേർക്കുക</div></div>
+    <div class="c"><div class="rw"><div><div class="b">വാഴപ്പഴം</div><div class="s">സുരേഷ് · 60 കിലോ ലഭ്യം</div></div><div class="n">₹35<span class="s">/കിലോ</span></div></div><div class="pb" style="margin-top:12px">കാർട്ടിൽ ചേർക്കുക</div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>ഹോം</div><div class="on"><i class="ti ti-building-store"></i>കട</div><div><i class="ti ti-receipt"></i>ഓർഡർ</div><div><i class="ti ti-user"></i>അക്കൗണ്ട്</div></div>
+</div></figure></div>
+</section>
+</body>
+</html>

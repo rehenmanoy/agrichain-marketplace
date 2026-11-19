@@ -1,0 +1,7 @@
+/** Translation key for "Good morning / afternoon / evening, {{name}}." */
+export function greetingKey() {
+  const hour = new Date().getHours()
+  if (hour < 12) return 'dashboard.greetingMorning'
+  if (hour < 17) return 'dashboard.greetingAfternoon'
+  return 'dashboard.greetingEvening'
+}

@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AgriChain Mobile Design Mockups</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@400;500;700&family=Inter:wght@400;500;600&family=Lora:wght@500;600&display=swap">
+<style>
+:root{--bg:#EAF1E4;--card:#fff;--line:#DCE6D2;--forest:#1E4D2B;--leaf:#4A7C3A;--deep:#173D22;--ink:#1C211B;--muted:#5B6158;--amber:#8A5A00;--sky:#175CD3;--danger:#B42318;--lime:#8CC63F}
+*{box-sizing:border-box}
+body{margin:0;background:#F6F7F3;font-family:Inter,sans-serif;color:var(--ink)}
+header.top{padding:28px 24px 8px;max-width:1500px;margin:0 auto}
+header.top h1{font-family:Lora,serif;font-size:28px;margin:0 0 6px;color:var(--forest)}
+header.top p{margin:0;color:var(--muted);font-size:14px;max-width:760px;line-height:1.5}
+nav.jump{max-width:1500px;margin:12px auto 0;padding:0 24px;display:flex;gap:8px;flex-wrap:wrap}
+nav.jump a{font-size:13px;text-decoration:none;color:var(--forest);border:1px solid var(--line);background:#fff;padding:6px 12px;border-radius:99px}
+section.role{max-width:1500px;margin:0 auto;padding:28px 24px 8px}
+section.role h2{font-family:Lora,serif;font-size:22px;color:var(--forest);margin:0 0 4px}
+section.role h3{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:22px 0 10px;font-weight:500}
+.row3{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start}
+figure{margin:0}
+figcaption{font-size:13px;color:var(--muted);margin:0 0 8px 4px}
+.ph{width:320px;background:var(--bg);border-radius:28px;border:1px solid var(--line);overflow:hidden;font-size:14px;line-height:1.4}
+.ph.ml{font-family:Inter,'Anek Malayalam',sans-serif;font-size:13px;line-height:1.45}
+.tb{background:#fff;border-bottom:1px solid var(--line);padding:14px 20px;display:flex;justify-content:space-between;align-items:center}
+.lg{display:inline-flex;align-items:center;gap:8px;font-family:Lora,serif;font-size:20px;font-weight:600;color:var(--forest)}
+.mk{width:32px;height:32px;border-radius:8px;background:var(--forest);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:19px}
+.band .mk,.dk .mk{background:#fff;color:var(--forest)}
+.tg{display:inline-flex;border:1px solid rgba(255,255,255,.55);border-radius:99px;padding:2px;font:600 11px Inter,sans-serif;line-height:1}
+.tg span{padding:6px 10px;border-radius:99px;color:#fff}
+.tg .on{background:#fff;color:var(--forest)}
+.ic{font-size:22px;color:var(--forest);position:relative;margin-left:14px}
+.bd{position:absolute;top:-6px;right:-8px;background:var(--danger);color:#fff;font:600 10px Inter;border-radius:99px;min-width:16px;height:16px;display:flex;align-items:center;justify-content:center;padding:0 4px}
+.pad{padding:18px 20px 16px}
+.h{font-size:18px;font-weight:600;font-family:Lora,serif}
+.ml .h{font-family:Lora,'Anek Malayalam',serif;font-weight:700}
+.c{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;margin-top:12px}
+.n{font-family:Inter,sans-serif;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+.s{font-size:12px;color:var(--muted)}.ml .s{font-size:11px}
+.b{font-weight:600}.ml .b{font-weight:700}
+.rw{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.bs{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.pl{font-size:11px;font-weight:500;padding:2px 10px;border-radius:99px;white-space:nowrap;background:var(--bg);color:var(--forest)}
+.pl.amber{background:#FFF4DC;color:var(--amber)}.pl.sky{background:#E8F0FD;color:var(--sky)}.pl.grey{background:#F1F1EE;color:var(--muted)}
+.bt{flex:1;min-height:44px;border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13px;font-weight:500;line-height:1.3;color:var(--forest);padding:0 4px;background:#fff}
+.bt.red{color:var(--danger)}.bt.amber{color:var(--amber)}
+.pb{height:44px;background:var(--forest);color:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500}
+.ml .pb{font-size:13px}
+.bar{display:flex;gap:8px;margin-top:12px}
+.in{height:44px;border:1px solid var(--line);border-radius:8px;background:#fff;display:flex;align-items:center;padding:0 12px;color:var(--muted);margin-top:6px}
+.tabs{background:#fff;border-top:1px solid var(--line);height:58px;display:flex;align-items:center;font-size:11px;color:var(--muted)}
+.tabs div{text-align:center;flex:1}.tabs i{font-size:22px;display:block}.tabs .on{color:var(--forest);font-weight:600}
+.strip{background:var(--deep);color:#fff;border-radius:16px;padding:12px 16px;margin-top:12px;background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 2px,transparent 2px 14px)}
+.strip .it{display:flex;gap:0;margin-top:6px;white-space:nowrap;overflow:hidden;font-size:13px}
+.strip .it span{padding:0 10px;border-right:1px solid rgba(255,255,255,.18)}.strip .it span:first-child{padding-left:0}.strip .it span:last-child{border:0}
+.up{color:var(--lime)}
+.st{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.st .c{margin:0;padding:12px 14px}
+.al{background:#FFF4DC;border:1px solid #F0DCA8;color:var(--amber);border-radius:12px;padding:10px 14px;margin-top:8px}
+.seg{display:flex;background:#fff;border:1px solid var(--line);border-radius:99px;padding:3px;margin-top:12px}.seg div{flex:1;text-align:center;padding:6px 0;border-radius:99px;font-size:12px}.seg .on{background:var(--forest);color:#fff;font-weight:600}
+.bars{display:flex;align-items:flex-end;justify-content:space-between;height:56px;margin-top:10px}.bars div{width:26px;background:var(--line);border-radius:4px}.bars div:last-child{background:var(--leaf)}
+.rt{display:flex;gap:12px;margin:14px 0}.ln{display:flex;flex-direction:column;align-items:center;padding-top:6px}.d1{width:10px;height:10px;border-radius:50%;background:var(--leaf)}.d2{width:10px;height:10px;border-radius:50%;border:2px solid var(--forest)}.ln i{width:2px;flex:1;background:var(--line);margin:3px 0}
+.rt .col{flex:1;display:flex;flex-direction:column;gap:12px}
+.step{display:flex;align-items:center;gap:10px}.step b{width:32px;height:32px;border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:500;color:var(--forest)}
+.ch{display:inline-block;border:1px solid var(--line);background:#fff;border-radius:99px;padding:6px 12px;font-size:12px;margin:8px 6px 0 0}.ch.on{background:var(--forest);color:#fff;border-color:var(--forest)}
+.pill{font-size:11px;border:1px solid var(--line);border-radius:99px;padding:2px 8px;background:#fff;font-weight:600;color:var(--forest)}.pill.on{background:var(--forest);color:#fff}
+.band{background:var(--deep);color:#fff;padding:26px 20px 22px;background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 2px,transparent 2px 14px)}
+.role{}
+.rc{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}.rc>div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;display:grid;grid-template-columns:24px 1fr;grid-template-rows:auto auto;column-gap:10px;row-gap:0;align-content:center;min-height:56px}.rc>div i{grid-column:1;grid-row:1/3;align-self:center;justify-self:center;font-size:22px!important}.rc>div .b{grid-column:2;grid-row:1;align-self:end;font-size:13px;line-height:1.25;margin:0}.rc>div .s{grid-column:2;grid-row:2;align-self:start;font-size:11px;line-height:1.3;margin:2px 0 0}
+footer{max-width:1500px;margin:30px auto;padding:0 24px;color:var(--muted);font-size:13px;line-height:1.5}
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>AgriChain Mobile: design mockups</h1>
+  <p>All screens drawn on 2026-11-03, rebuilt from the agreed design as one page. English on the left, Malayalam next to it. Colours, sizes and rules are in <b>Mobile-Design.md</b>. Fonts and icons load from the internet, so open this file while online. <b>Not seen on a real phone yet. Malayalam lines written by Claude still need a native check.</b></p>
+</header>
+<nav class="jump"><a href="#signedout">Signed out</a><a href="#buyer">Buyer</a><a href="#farmer">Farmer</a><a href="#partner">Delivery partner</a><a href="#owner">Warehouse owner</a></nav>
+
+<section class="role" id="signedout">
+<h2>Signed-out screens</h2>
+<div class="row3">
+
+<figure><figcaption>Log in (English)</figcaption>
+<div class="ph">
+  <div class="band"><div class="rw"><span class="lg" style="color:#fff"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><span class="tg"><span class="on">EN</span><span>ML</span></span></div><div style="margin-top:10px;font-size:13px;opacity:.9">From farm to market, without barriers.</div></div>
+  <div class="pad" style="padding-bottom:24px">
+    <div class="h">Welcome back</div>
+    <div class="s" style="margin-top:2px">Log in with your phone number and password.</div>
+    <div class="s" style="margin-top:14px">Phone number</div><div class="in">10-digit mobile number</div>
+    <div class="s" style="margin-top:12px">Password</div><div class="in">At least 8 characters</div>
+    <div class="s" style="margin-top:10px;color:var(--forest)">Forgot password?</div>
+    <div class="pb" style="margin-top:16px">Log in</div>
+    <div class="s" style="text-align:center;margin-top:16px">New to AgriChain? <b style="color:var(--forest)">Create an account</b></div>
+  </div>
+</div></figure>
+
+<figure><figcaption>Log in (Malayalam)</figcaption>
+<div class="ph ml">
+  <div class="band"><div class="rw"><span class="lg" style="color:#fff"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><span class="tg"><span>EN</span><span class="on">ML</span></span></div><div style="margin-top:10px;opacity:.9">കർഷകരിൽ നിന്ന് നേരിട്ട്</div></div>
+  <div class="pad" style="padding-bottom:24px">
+    <div class="h">വീണ്ടും സ്വാഗതം</div>
+    <div class="s" style="margin-top:2px">ഫോൺ നമ്പറും പാസ്‌വേഡും ഉപയോഗിച്ച് ലോഗിൻ ചെയ്യൂ.</div>
+    <div class="s" style="margin-top:14px">ഫോൺ നമ്പർ</div><div class="in">10 അക്ക മൊബൈൽ നമ്പർ</div>
+    <div class="s" style="margin-top:12px">പാസ്‌വേഡ്</div><div class="in">കുറഞ്ഞത് 8 അക്ഷരങ്ങൾ</div>
+    <div class="s" style="margin-top:10px;color:var(--forest)">പാസ്‌വേഡ് മറന്നോ?</div>
+    <div class="pb" style="margin-top:16px">ലോഗിൻ</div>
+    <div class="s" style="text-align:center;margin-top:16px">AgriChain-ൽ പുതിയതാണോ? <b style="color:var(--forest)">അക്കൗണ്ട് തുടങ്ങുക</b></div>
+  </div>
+</div></figure>
+
+<figure><figcaption>Sign up (English). No header, four role cards</figcaption>
+<div class="ph">
+  <div class="pad">
+    <i class="ti ti-arrow-left" style="font-size:22px;color:var(--forest)"></i>
+    <div class="h" style="margin-top:8px">Create your account</div>
+    <div class="s" style="margin-top:12px">How are you joining?</div>
+    <div class="rc">
+      <div><i class="ti ti-plant-2" style="color:var(--leaf);font-size:22px"></i><div class="b">Farmer</div><div class="s">Sell your harvest</div></div>
+      <div style="border-color:var(--forest)"><i class="ti ti-shopping-bag" style="color:var(--leaf);font-size:22px"></i><div class="b">Buyer</div><div class="s">Buy fresh produce</div></div>
+      <div><i class="ti ti-building-warehouse" style="color:var(--leaf);font-size:22px"></i><div class="b">Warehouse owner</div><div class="s">Rent out storage</div></div>
+      <div><i class="ti ti-truck-delivery" style="color:var(--leaf);font-size:22px"></i><div class="b">Delivery partner</div><div class="s">Deliver orders</div></div>
+    </div>
+    <div class="s" style="margin-top:14px">Your name</div><div class="in">Anu</div>
+    <div class="s" style="margin-top:10px">Phone number</div><div class="in">10-digit mobile number</div>
+    <div class="s" style="margin-top:10px">Password</div><div class="in">At least 8 characters</div>
+    <div class="s" style="margin-top:10px">Your area</div><div><span class="ch on">Thrissur</span><span class="ch">Ernakulam</span></div>
+    <div class="s" style="margin-top:10px">Village or town</div><div class="in">Kodakara</div>
+    <div class="pb" style="margin-top:16px">Create account</div>
+  </div>
+</div></figure>
+
+<figure><figcaption>Sign up (Malayalam)</figcaption>
+<div class="ph ml">
+  <div class="pad">
+    <i class="ti ti-arrow-left" style="font-size:22px;color:var(--forest)"></i>
+    <div class="h" style="margin-top:8px">നിങ്ങളുടെ അക്കൗണ്ട് തുടങ്ങുക</div>
+    <div class="s" style="margin-top:12px">ഏത് രീതിയിൽ ചേരുന്നു?</div>
+    <div class="rc">
+      <div><i class="ti ti-plant-2" style="color:var(--leaf);font-size:22px"></i><div class="b">കർഷകൻ</div><div class="s">വിളവ് വിൽക്കാം</div></div>
+      <div style="border-color:var(--forest)"><i class="ti ti-shopping-bag" style="color:var(--leaf);font-size:22px"></i><div class="b">ബയർ</div><div class="s">പുതിയ വിളകൾ വാങ്ങാം</div></div>
+      <div><i class="ti ti-building-warehouse" style="color:var(--leaf);font-size:22px"></i><div class="b">സംഭരണശാല ഉടമ</div><div class="s">സംഭരണ സ്ഥലം വാടകയ്ക്ക് നൽകാം</div></div>
+      <div><i class="ti ti-truck-delivery" style="color:var(--leaf);font-size:22px"></i><div class="b">ഡെലിവറി പങ്കാളി</div><div class="s">ഓർഡറുകൾ എത്തിക്കാം</div></div>
+    </div>
+    <div class="s" style="margin-top:14px">നിങ്ങളുടെ പേര്</div><div class="in">അനു</div>
+    <div class="s" style="margin-top:10px">ഫോൺ നമ്പർ</div><div class="in">10 അക്ക മൊബൈൽ നമ്പർ</div>
+    <div class="s" style="margin-top:10px">പാസ്‌വേഡ്</div><div class="in">കുറഞ്ഞത് 8 അക്ഷരങ്ങൾ</div>
+    <div class="s" style="margin-top:10px">നിങ്ങളുടെ പ്രദേശം</div><div><span class="ch on">തൃശ്ശൂർ</span><span class="ch">എറണാകുളം</span></div>
+    <div class="s" style="margin-top:10px">ഗ്രാമം അല്ലെങ്കിൽ പട്ടണം</div><div class="in">കൊടകര</div>
+    <div class="pb" style="margin-top:16px">അക്കൗണ്ട് തുടങ്ങുക</div>
+  </div>
+</div></figure>
+
+</div>
+</section>
+
+<section class="role" id="buyer">
+<h2>Buyer</h2>
+<p class="s" style="margin:0">Tabs: Home, Shop, Orders, Account. Cart and Bell in the top bar. ഹോം · കട · ഓർഡർ · അക്കൗണ്ട്</p>
+
+<h3>Home</h3>
+<div class="row3">
+<figure><figcaption>English</figcaption>
+<div class="ph">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><span><i class="ti ti-bell ic"><span class="bd">2</span></i><i class="ti ti-shopping-cart ic"><span class="bd">3</span></i></span></div>
+  <div class="pad">
+    <div class="h">Good morning, Anu.</div><div style="margin-top:2px">One order is on the way.</div>
+    <div class="strip"><div class="s" style="color:#fff;opacity:.85">Today's market price, per kg</div><div class="it"><span>Tomato <b class="n" style="font-size:13px">₹46</b> <b class="up">▲</b></span><span>Banana <b class="n" style="font-size:13px">₹35</b></span><span>Onion <b class="n" style="font-size:13px">₹28</b></span></div></div>
+    <div class="b" style="margin-top:18px">Farmers near you</div>
+    <div class="c" style="margin-top:8px"><div class="rw"><div><div class="b">Mani</div><div class="s">Kodakara</div></div><div class="s"><span class="n" style="font-size:13px">4.8</span> (12) · 4 items</div></div></div>
+    <div class="c" style="margin-top:8px"><div class="rw"><div><div class="b">Suresh</div><div class="s">Chalakudy</div></div><div class="s"><span class="n" style="font-size:13px">4.5</span> (8) · 3 items</div></div></div>
+  </div>
+  <div class="tabs"><div class="on"><i class="ti ti-home"></i>Home</div><div><i class="ti ti-building-store"></i>Shop</div><div><i class="ti ti-receipt"></i>Orders</div><div><i class="ti ti-user"></i>Account</div></div>
+</div></figure>
+<figure><figcaption>Malayalam</figcaption>
+<div class="ph ml">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><span><i class="ti ti-bell ic"><span class="bd">2</span></i><i class="ti ti-shopping-cart ic"><span class="bd">3</span></i></span></div>
+  <div class="pad">
+    <div class="h">സുപ്രഭാതം, അനു.</div><div style="margin-top:2px">ഒരു ഓർഡർ നടക്കുന്നു.</div>
+    <div class="strip"><div class="s" style="color:#fff;opacity:.85">ഇന്നത്തെ വിപണി വില, കിലോയ്ക്ക്</div><div class="it"><span>തക്കാളി <b class="n" style="font-size:13px">₹46</b> <b class="up">▲</b></span><span>വാഴപ്പഴം <b class="n" style="font-size:13px">₹35</b></span><span>സവാള <b class="n" style="font-size:13px">₹28</b></span></div></div>
+    <div class="b" style="margin-top:18px">അടുത്തുള്ള കർഷകർ</div>
+    <div class="c" style="margin-top:8px"><div class="rw"><div><div class="b">മണി</div><div class="s">കൊടകര</div></div><div class="s"><span class="n" style="font-size:13px">4.8</span> (12) · 4 ഇനങ്ങൾ</div></div></div>
+    <div class="c" style="margin-top:8px"><div class="rw"><div><div class="b">സുരേഷ്</div><div class="s">ചാലക്കുടി</div></div><div class="s"><span class="n" style="font-size:13px">4.5</span> (8) · 3 ഇനങ്ങൾ</div></div></div>
+  </div>
+  <div class="tabs"><div class="on"><i class="ti ti-home"></i>ഹോം</div><div><i class="ti ti-building-store"></i>കട</div><div><i class="ti ti-receipt"></i>ഓർഡർ</div><div><i class="ti ti-user"></i>അക്കൗണ്ട്</div></div>
+</div></figure>
+</div>
+
+<h3>Shop</h3>
+<div class="row3">
+<figure><figcaption>English</figcaption>
+<div class="ph">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><span><i class="ti ti-bell ic"></i><i class="ti ti-shopping-cart ic"><span class="bd">3</span></i></span></div>
+  <div class="pad">
+    <div class="h">Shop</div>
+    <div class="in" style="margin-top:10px"><i class="ti ti-search" style="margin-right:8px"></i>Search vegetables or fruits</div>
+    <div><span class="ch on">All</span><span class="ch">Vegetables</span><span class="ch">Fruits</span></div>
+    <div class="c"><div class="rw"><div><div class="b">Tomato</div><div class="s">Mani · 120 kg available</div></div><div class="n">₹48<span class="s">/kg</span></div></div><div class="pb" style="margin-top:12px">Add to cart</div></div>
+    <div class="c"><div class="rw"><div><div class="b">Banana</div><div class="s">Suresh · 60 kg available</div></div><div class="n">₹35<span class="s">/kg</span></div></div><div class="pb" style="margin-top:12px">Add to cart</div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>Home</div><div class="on"><i class="ti ti-building-store"></i>Shop</div><div><i class="ti ti-receipt"></i>Orders</div><div><i class="ti ti-user"></i>Account</div></div>
+</div></figure>
+<figure><figcaption>Malayalam</figcaption>
+<div class="ph ml">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><span><i class="ti ti-bell ic"></i><i class="ti ti-shopping-cart ic"><span class="bd">3</span></i></span></div>
+  <div class="pad">
+    <div class="h">കട</div>
+    <div class="in" style="margin-top:10px"><i class="ti ti-search" style="margin-right:8px"></i>പച്ചക്കറിയോ പഴമോ തിരയുക</div>
+    <div><span class="ch on">എല്ലാം</span><span class="ch">പച്ചക്കറികൾ</span><span class="ch">പഴങ്ങൾ</span></div>
+    <div class="c"><div class="rw"><div><div class="b">തക്കാളി</div><div class="s">മണി · 120 കിലോ ലഭ്യം</div></div><div class="n">₹48<span class="s">/കിലോ</span></div></div><div class="pb" style="margin-top:12px">കാർട്ടിൽ ചേർക്കുക</div></div>
+    <div class="c"><div class="rw"><div><div class="b">വാഴപ്പഴം</div><div class="s">സുരേഷ് · 60 കിലോ ലഭ്യം</div></div><div class="n">₹35<span class="s">/കിലോ</span></div></div><div class="pb" style="margin-top:12px">കാർട്ടിൽ ചേർക്കുക</div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>ഹോം</div><div class="on"><i class="ti ti-building-store"></i>കട</div><div><i class="ti ti-receipt"></i>ഓർഡർ</div><div><i class="ti ti-user"></i>അക്കൗണ്ട്</div></div>
+</div></figure>
+</div>
+
+<h3>Cart</h3>
+<div class="row3">
+<figure><figcaption>English</figcaption>
+<div class="ph">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><span><i class="ti ti-bell ic"></i><i class="ti ti-shopping-cart ic"><span class="bd">2</span></i></span></div>
+  <div class="pad">
+    <div class="h">Your cart</div>
+    <div class="s" style="margin-top:12px">From Mani</div>
+    <div class="c" style="margin-top:6px">
+      <div class="rw"><div><div class="b">Tomato</div><div class="s">₹48/kg</div></div><div class="step"><b>−</b><span class="n">5</span><b>+</b></div></div>
+      <div class="rw" style="margin-top:12px"><div><div class="b">Banana</div><div class="s" style="color:var(--danger)">Only 1 kg left. Reduce the quantity.</div></div><div class="step"><b>−</b><span class="n">2</span><b>+</b></div></div>
+      <div style="border-top:1px solid var(--line);margin-top:12px;padding-top:10px" class="rw"><span class="s">This order, with delivery</span><span class="n">₹344</span></div>
+    </div>
+    <div class="rw" style="margin-top:14px"><div><div class="s">Deliver to</div><div>Kodakara</div></div><span style="color:var(--forest);font-weight:500">Change</span></div>
+    <div class="rw" style="margin-top:10px"><span class="b">Total</span><span class="n">₹344</span></div>
+    <div class="pb" style="margin-top:12px">Place order</div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>Home</div><div><i class="ti ti-building-store"></i>Shop</div><div><i class="ti ti-receipt"></i>Orders</div><div><i class="ti ti-user"></i>Account</div></div>
+</div></figure>
+<figure><figcaption>Malayalam</figcaption>
+<div class="ph ml">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><span><i class="ti ti-bell ic"></i><i class="ti ti-shopping-cart ic"><span class="bd">2</span></i></span></div>
+  <div class="pad">
+    <div class="h">നിങ്ങളുടെ കാർട്ട്</div>
+    <div class="s" style="margin-top:12px">മണിയിൽ നിന്ന്</div>
+    <div class="c" style="margin-top:6px">
+      <div class="rw"><div><div class="b">തക്കാളി</div><div class="s">₹48/കിലോ</div></div><div class="step"><b>−</b><span class="n">5</span><b>+</b></div></div>
+      <div class="rw" style="margin-top:12px"><div><div class="b">വാഴപ്പഴം</div><div class="s" style="color:var(--danger)">1 കിലോ മാത്രം ബാക്കി. അളവ് കുറയ്ക്കൂ.</div></div><div class="step"><b>−</b><span class="n">2</span><b>+</b></div></div>
+      <div style="border-top:1px solid var(--line);margin-top:12px;padding-top:10px" class="rw"><span class="s">ഈ ഓർഡർ, ഡെലിവറി ഉൾപ്പെടെ</span><span class="n">₹344</span></div>
+    </div>
+    <div class="rw" style="margin-top:14px"><div><div class="s">എത്തിക്കേണ്ട വിലാസം</div><div>കൊടകര</div></div><span style="color:var(--forest);font-weight:500">മാറ്റുക</span></div>
+    <div class="rw" style="margin-top:10px"><span class="b">ആകെ, 1 ഓർഡർ</span><span class="n">₹344</span></div>
+    <div class="pb" style="margin-top:12px">ഓർഡർ ചെയ്യുക</div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>ഹോം</div><div><i class="ti ti-building-store"></i>കട</div><div><i class="ti ti-receipt"></i>ഓർഡർ</div><div><i class="ti ti-user"></i>അക്കൗണ്ട്</div></div>
+</div></figure>
+</div>
+
+<h3>Orders</h3>
+<div class="row3">
+<figure><figcaption>English</figcaption>
+<div class="ph">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><span><i class="ti ti-bell ic"></i><i class="ti ti-shopping-cart ic"></i></span></div>
+  <div class="pad">
+    <div class="h">My orders</div>
+    <div class="c"><div class="rw"><div class="b">Tomato · 5 kg</div><span class="n">₹274</span></div><div class="s">From Mani</div><div style="margin-top:8px"><span class="pl amber">Waiting for the farmer's reply</span></div><div class="bt" style="margin-top:12px;flex:none;color:var(--danger)">Cancel order</div></div>
+    <div class="c"><div class="rw"><div class="b">Banana · 2 kg</div><span class="n">₹104</span></div><div class="s">From Suresh</div><div style="margin-top:8px"><span class="pl sky">On the way</span></div></div>
+    <div class="c"><div class="rw"><div class="b">Onion · 10 kg</div><span class="n">₹320</span></div><div class="s">From Mani</div><div style="margin-top:8px"><span class="pl">Delivered</span></div><div class="bt" style="margin-top:12px;flex:none">Rate this order</div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>Home</div><div><i class="ti ti-building-store"></i>Shop</div><div class="on"><i class="ti ti-receipt"></i>Orders</div><div><i class="ti ti-user"></i>Account</div></div>
+</div></figure>
+<figure><figcaption>Malayalam. A long status goes on its own line</figcaption>
+<div class="ph ml">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><span><i class="ti ti-bell ic"></i><i class="ti ti-shopping-cart ic"></i></span></div>
+  <div class="pad">
+    <div class="h">എന്റെ ഓർഡറുകൾ</div>
+    <div class="c"><div class="rw"><div class="b">തക്കാളി · 5 കിലോ</div><span class="n">₹274</span></div><div class="s">മണിയിൽ നിന്ന്</div><div style="margin-top:8px"><span class="pl amber" style="white-space:normal;display:inline-block">കർഷകന്റെ മറുപടിക്കായി കാത്തിരിക്കുന്നു</span></div><div class="bt red" style="margin-top:12px;flex:none">ഓർഡർ റദ്ദാക്കുക</div></div>
+    <div class="c"><div class="rw"><div class="b">വാഴപ്പഴം · 2 കിലോ</div><span class="n">₹104</span></div><div class="s">സുരേഷിൽ നിന്ന്</div><div style="margin-top:8px"><span class="pl sky">വഴിയിലാണ്</span></div></div>
+    <div class="c"><div class="rw"><div class="b">സവാള · 10 കിലോ</div><span class="n">₹320</span></div><div class="s">മണിയിൽ നിന്ന്</div><div style="margin-top:8px"><span class="pl">എത്തിച്ചു</span></div><div class="bt" style="margin-top:12px;flex:none">ഓർഡർ റേറ്റ് ചെയ്യുക</div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>ഹോം</div><div><i class="ti ti-building-store"></i>കട</div><div class="on"><i class="ti ti-receipt"></i>ഓർഡർ</div><div><i class="ti ti-user"></i>അക്കൗണ്ട്</div></div>
+</div></figure>
+</div>
+
+<h3>Account</h3>
+<div class="row3">
+<figure><figcaption>English. Language toggle is the right end of the Language row</figcaption>
+<div class="ph">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><span><i class="ti ti-bell ic"></i><i class="ti ti-shopping-cart ic"></i></span></div>
+  <div class="pad">
+    <div class="h">My account</div>
+    <div class="c"><div style="display:flex;gap:12px;align-items:center"><div style="width:44px;height:44px;border-radius:50%;background:var(--bg);color:var(--leaf);display:flex;align-items:center;justify-content:center;font-weight:600">A</div><div><div class="b">Anu</div><div class="s">9791118801 · Thrissur · Buyer</div></div></div></div>
+    <div class="c" style="padding:4px 16px">
+      <div class="rw" style="height:48px;border-bottom:1px solid var(--bg)"><span>Edit profile</span><i class="ti ti-chevron-right"></i></div>
+      <div class="rw" style="height:48px;border-bottom:1px solid var(--bg)"><span>Change password</span><i class="ti ti-chevron-right"></i></div>
+      <div class="rw" style="height:48px;border-bottom:1px solid var(--bg)"><span>Language</span><span class="pill"><b style="color:#fff;background:var(--forest);padding:1px 6px;border-radius:99px">EN</b> ML</span></div>
+      <div class="rw" style="height:48px;color:var(--danger)"><span>Log out</span></div>
+    </div>
+    <div class="s" style="margin-top:12px">Your phone number and area cannot be changed here.</div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>Home</div><div><i class="ti ti-building-store"></i>Shop</div><div><i class="ti ti-receipt"></i>Orders</div><div class="on"><i class="ti ti-user"></i>Account</div></div>
+</div></figure>
+<figure><figcaption>Malayalam</figcaption>
+<div class="ph ml">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><span><i class="ti ti-bell ic"></i><i class="ti ti-shopping-cart ic"></i></span></div>
+  <div class="pad">
+    <div class="h">എന്റെ അക്കൗണ്ട്</div>
+    <div class="c"><div style="display:flex;gap:12px;align-items:center"><div style="width:44px;height:44px;border-radius:50%;background:var(--bg);color:var(--leaf);display:flex;align-items:center;justify-content:center;font-weight:700">അ</div><div><div class="b">അനു</div><div class="s">9791118801 · തൃശ്ശൂർ · ബയർ</div></div></div></div>
+    <div class="c" style="padding:4px 16px">
+      <div class="rw" style="height:48px;border-bottom:1px solid var(--bg)"><span>പ്രൊഫൈൽ മാറ്റുക</span><i class="ti ti-chevron-right"></i></div>
+      <div class="rw" style="height:48px;border-bottom:1px solid var(--bg)"><span>പാസ്‌വേഡ് മാറ്റുക</span><i class="ti ti-chevron-right"></i></div>
+      <div class="rw" style="height:48px;border-bottom:1px solid var(--bg)"><span>ഭാഷ</span><span class="pill">EN <b style="color:#fff;background:var(--forest);padding:1px 6px;border-radius:99px">ML</b></span></div>
+      <div class="rw" style="height:48px;color:var(--danger)"><span>ലോഗ് ഔട്ട്</span></div>
+    </div>
+    <div class="s" style="margin-top:12px">ഫോൺ നമ്പറും പ്രദേശവും ഇവിടെ മാറ്റാൻ കഴിയില്ല.</div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>ഹോം</div><div><i class="ti ti-building-store"></i>കട</div><div><i class="ti ti-receipt"></i>ഓർഡർ</div><div class="on"><i class="ti ti-user"></i>അക്കൗണ്ട്</div></div>
+</div></figure>
+</div>
+</section>
+
+<section class="role" id="farmer">
+<h2>Farmer</h2>
+<p class="s" style="margin:0">Tabs: Home, Produce, Orders, Storage, Account. ഹോം · വിളകൾ · ഓർഡർ · സംഭരണം · അക്കൗണ്ട്</p>
+
+<h3>Home</h3>
+<div class="row3">
+<figure><figcaption>English</figcaption>
+<div class="ph">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><i class="ti ti-bell ic"><span class="bd">1</span></i></div>
+  <div class="pad">
+    <div class="h">Hello, Mani.</div><div style="margin-top:2px">2 buyers are waiting.</div>
+    <div class="pb" style="margin-top:14px">Sell produce</div>
+    <div class="strip"><div class="s" style="color:#fff;opacity:.85">Today's market price, per kg</div><div class="it"><span>Tomato <b class="n" style="font-size:13px">₹46</b> <b class="up">▲</b></span><span>Banana <b class="n" style="font-size:13px">₹35</b></span><span>Onion</span></div></div>
+    <div class="c"><div class="b">Needs your answer</div><div style="margin-top:6px">Raju wants Tomato, 40 kg</div><div class="bar"><div class="bt" style="background:var(--forest);color:#fff">Accept</div><div class="bt">Reject</div></div></div>
+    <div class="c"><div class="b">Earnings, last 7 days</div><div class="n" style="margin-top:4px">₹3,240</div><div class="bars"><div style="height:20px"></div><div style="height:34px"></div><div style="height:16px"></div><div style="height:44px"></div><div style="height:28px"></div><div style="height:36px"></div><div style="height:48px"></div></div></div>
+  </div>
+  <div class="tabs"><div class="on"><i class="ti ti-home"></i>Home</div><div><i class="ti ti-plant-2"></i>Produce</div><div><i class="ti ti-receipt"></i>Orders</div><div><i class="ti ti-building-warehouse"></i>Storage</div><div><i class="ti ti-user"></i>Account</div></div>
+</div></figure>
+<figure><figcaption>Malayalam</figcaption>
+<div class="ph ml">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><i class="ti ti-bell ic"><span class="bd">1</span></i></div>
+  <div class="pad">
+    <div class="h">നമസ്കാരം, മണി.</div><div style="margin-top:2px">2 ബയർമാർ കാത്തിരിക്കുന്നു.</div>
+    <div class="pb" style="margin-top:14px">വിള വിൽക്കുക</div>
+    <div class="strip"><div class="s" style="color:#fff;opacity:.85">ഇന്നത്തെ വിപണി വില, കിലോയ്ക്ക്</div><div class="it"><span>തക്കാളി <b class="n" style="font-size:13px">₹46</b> <b class="up">▲</b></span><span>വാഴപ്പഴം <b class="n" style="font-size:13px">₹35</b></span><span>സവാള</span></div></div>
+    <div class="c"><div class="b">നിങ്ങളുടെ മറുപടി വേണം</div><div style="margin-top:6px">രാജുവിന് തക്കാളി 40 കിലോ വേണം</div><div class="bar"><div class="bt" style="background:var(--forest);color:#fff">സ്വീകരിക്കുക</div><div class="bt">നിരസിക്കുക</div></div></div>
+    <div class="c"><div class="b">കഴിഞ്ഞ 7 ദിവസത്തെ വരുമാനം</div><div class="n" style="margin-top:4px">₹3,240</div><div class="bars"><div style="height:20px"></div><div style="height:34px"></div><div style="height:16px"></div><div style="height:44px"></div><div style="height:28px"></div><div style="height:36px"></div><div style="height:48px"></div></div></div>
+  </div>
+  <div class="tabs"><div class="on"><i class="ti ti-home"></i>ഹോം</div><div><i class="ti ti-plant-2"></i>വിളകൾ</div><div><i class="ti ti-receipt"></i>ഓർഡർ</div><div><i class="ti ti-building-warehouse"></i>സംഭരണം</div><div><i class="ti ti-user"></i>അക്കൗണ്ട്</div></div>
+</div></figure>
+</div>
+
+<h3>My produce</h3>
+<div class="row3">
+<figure><figcaption>English. Stop selling is two lines, centred</figcaption>
+<div class="ph">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><i class="ti ti-bell ic"></i></div>
+  <div class="pad">
+    <div class="h">My produce</div><div class="s" style="letter-spacing:.04em;margin-top:2px">2 ITEMS ON SALE</div>
+    <div class="c"><div class="rw"><span class="b">Tomato</span><span class="pl">Selling</span></div><div class="bs" style="margin-top:8px"><span class="s"><span class="n">120</span> kg left</span><span class="n">₹48<span class="s">/kg</span></span></div><div class="s" style="color:var(--leaf);margin-top:2px">₹2 above market</div><div class="bar"><div class="bt">Change</div><div class="bt amber">Stop<br>selling</div><div class="bt red">Delete</div></div></div>
+    <div class="c"><div class="rw"><span class="b">Banana</span><span class="pl">Selling</span></div><div class="bs" style="margin-top:8px"><span class="s"><span class="n">60</span> kg left</span><span class="n">₹35<span class="s">/kg</span></span></div><div class="s" style="margin-top:2px">Price set by the farmer</div><div class="bar"><div class="bt">Change</div><div class="bt amber">Stop<br>selling</div><div class="bt red">Delete</div></div></div>
+    <div class="s" style="margin-top:16px;letter-spacing:.04em">STOPPED</div>
+    <div class="c" style="margin-top:8px"><div class="rw"><span class="b">Onion</span><span class="pl grey">Stopped</span></div><div class="bar"><div class="bt">Sell again</div><div class="bt red">Delete</div></div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>Home</div><div class="on"><i class="ti ti-plant-2"></i>Produce</div><div><i class="ti ti-receipt"></i>Orders</div><div><i class="ti ti-building-warehouse"></i>Storage</div><div><i class="ti ti-user"></i>Account</div></div>
+</div></figure>
+<figure><figcaption>Malayalam</figcaption>
+<div class="ph ml">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><i class="ti ti-bell ic"></i></div>
+  <div class="pad">
+    <div class="h">എന്റെ വിളകൾ</div><div class="s" style="margin-top:2px">2 വിളകൾ വിൽപനയിൽ</div>
+    <div class="c"><div class="rw"><span class="b">തക്കാളി</span><span class="pl">വിൽപനയിൽ</span></div><div class="bs" style="margin-top:8px"><span><span class="n">120</span> കിലോ ബാക്കി</span><span class="n">₹48<span class="s">/കിലോ</span></span></div><div class="s" style="color:var(--leaf);margin-top:2px">വിപണിയേക്കാൾ ₹2 കൂടുതൽ</div><div class="bar"><div class="bt">മാറ്റുക</div><div class="bt amber">വിൽപന<br>നിർത്തുക</div><div class="bt red">ഡിലീറ്റ്</div></div></div>
+    <div class="c"><div class="rw"><span class="b">വാഴപ്പഴം</span><span class="pl">വിൽപനയിൽ</span></div><div class="bs" style="margin-top:8px"><span><span class="n">60</span> കിലോ ബാക്കി</span><span class="n">₹35<span class="s">/കിലോ</span></span></div><div class="s" style="margin-top:2px">കർഷകൻ നിശ്ചയിച്ച വില</div><div class="bar"><div class="bt">മാറ്റുക</div><div class="bt amber">വിൽപന<br>നിർത്തുക</div><div class="bt red">ഡിലീറ്റ്</div></div></div>
+    <div class="s b" style="margin-top:16px">നിർത്തിയവ</div>
+    <div class="c" style="margin-top:8px"><div class="rw"><span class="b">സവാള</span><span class="pl grey">നിർത്തി</span></div><div class="bar"><div class="bt">വീണ്ടും വിൽക്കുക</div><div class="bt red">ഡിലീറ്റ്</div></div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>ഹോം</div><div class="on"><i class="ti ti-plant-2"></i>വിളകൾ</div><div><i class="ti ti-receipt"></i>ഓർഡർ</div><div><i class="ti ti-building-warehouse"></i>സംഭരണം</div><div><i class="ti ti-user"></i>അക്കൗണ്ട്</div></div>
+</div></figure>
+</div>
+
+<h3>Orders</h3>
+<div class="row3">
+<figure><figcaption>English</figcaption>
+<div class="ph">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><i class="ti ti-bell ic"></i></div>
+  <div class="pad">
+    <div class="h">Orders</div>
+    <div class="seg"><div class="on">New</div><div>In progress</div><div>Done</div></div>
+    <div class="c"><div class="rw"><span class="b">Raju</span><span class="pl sky">New order</span></div><div style="margin-top:6px">Tomato · 40 kg</div><div class="s">Deliver to Aluva market</div><div class="bs" style="margin-top:6px"><span class="s">You get</span><span class="n">₹1,920</span></div><div class="bar"><div class="bt" style="background:var(--forest);color:#fff">Accept</div><div class="bt">Reject</div></div></div>
+    <div class="c"><div class="rw"><span class="b">Anil</span><span class="pl sky">New order</span></div><div style="margin-top:6px">Banana · 25 kg</div><div class="s">Deliver to Angamaly</div><div class="bs" style="margin-top:6px"><span class="s">You get</span><span class="n">₹875</span></div><div class="bar"><div class="bt" style="background:var(--forest);color:#fff">Accept</div><div class="bt">Reject</div></div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>Home</div><div><i class="ti ti-plant-2"></i>Produce</div><div class="on"><i class="ti ti-receipt"></i>Orders</div><div><i class="ti ti-building-warehouse"></i>Storage</div><div><i class="ti ti-user"></i>Account</div></div>
+</div></figure>
+<figure><figcaption>Malayalam</figcaption>
+<div class="ph ml">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><i class="ti ti-bell ic"></i></div>
+  <div class="pad">
+    <div class="h">ഓർഡറുകൾ</div>
+    <div class="seg"><div class="on">പുതിയത്</div><div>നടക്കുന്നവ</div><div>കഴിഞ്ഞവ</div></div>
+    <div class="c"><div class="rw"><span class="b">രാജു</span><span class="pl sky">പുതിയ ഓർഡർ</span></div><div style="margin-top:6px">തക്കാളി · 40 കിലോ</div><div class="s">എത്തിക്കേണ്ടത്: ആലുവ മാർക്കറ്റ്</div><div class="bs" style="margin-top:6px"><span class="s">നിങ്ങൾക്ക് കിട്ടുന്നത്</span><span class="n">₹1,920</span></div><div class="bar"><div class="bt" style="background:var(--forest);color:#fff">സ്വീകരിക്കുക</div><div class="bt">നിരസിക്കുക</div></div></div>
+    <div class="c"><div class="rw"><span class="b">അനിൽ</span><span class="pl sky">പുതിയ ഓർഡർ</span></div><div style="margin-top:6px">വാഴപ്പഴം · 25 കിലോ</div><div class="s">എത്തിക്കേണ്ടത്: അങ്കമാലി</div><div class="bs" style="margin-top:6px"><span class="s">നിങ്ങൾക്ക് കിട്ടുന്നത്</span><span class="n">₹875</span></div><div class="bar"><div class="bt" style="background:var(--forest);color:#fff">സ്വീകരിക്കുക</div><div class="bt">നിരസിക്കുക</div></div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>ഹോം</div><div><i class="ti ti-plant-2"></i>വിളകൾ</div><div class="on"><i class="ti ti-receipt"></i>ഓർഡർ</div><div><i class="ti ti-building-warehouse"></i>സംഭരണം</div><div><i class="ti ti-user"></i>അക്കൗണ്ട്</div></div>
+</div></figure>
+</div>
+
+<h3>Storage</h3>
+<div class="row3">
+<figure><figcaption>English. My storage tab with the three states</figcaption>
+<div class="ph">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><i class="ti ti-bell ic"></i></div>
+  <div class="pad">
+    <div class="h">Storage</div>
+    <div class="seg"><div>Warehouses</div><div class="on">My storage</div></div>
+    <div class="c"><div class="rw"><span class="b">Kodakara Cold Store</span><span class="pl" style="background:#FDECEA;color:var(--danger)">Overdue by 3 days</span></div><div class="s" style="margin-top:4px">Tomato · 200 kg · until 12 Nov</div><div class="bs" style="margin-top:6px"><span class="s">Charge so far</span><span class="n">₹1,350</span></div><div class="bar"><div class="bt">Take out</div><div class="bt">Extend</div></div></div>
+    <div class="c"><div class="rw"><span class="b">Aluva Godown</span><span class="pl">In storage</span></div><div class="s" style="margin-top:4px">Onion · 100 kg · 8 days left</div></div>
+    <div class="c"><div class="rw"><span class="b">Chalakudy Store</span><span class="pl amber">Waiting for the owner</span></div><div class="s" style="margin-top:4px">Banana · 50 kg</div><div class="bt" style="margin-top:12px;flex:none">Cancel request</div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>Home</div><div><i class="ti ti-plant-2"></i>Produce</div><div><i class="ti ti-receipt"></i>Orders</div><div class="on"><i class="ti ti-building-warehouse"></i>Storage</div><div><i class="ti ti-user"></i>Account</div></div>
+</div></figure>
+<figure><figcaption>Malayalam</figcaption>
+<div class="ph ml">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><i class="ti ti-bell ic"></i></div>
+  <div class="pad">
+    <div class="h">സംഭരണം</div>
+    <div class="seg"><div>അടുത്തുള്ള സംഭരണശാലകൾ</div><div class="on">എന്റെ സംഭരണം</div></div>
+    <div class="c"><div class="rw" style="align-items:flex-start"><span class="b">കൊടകര ശീതീകരണ കേന്ദ്രം</span><span class="pl" style="background:#FDECEA;color:var(--danger)">3 ദിവസം വൈകി</span></div><div class="s" style="margin-top:4px">തക്കാളി · 200 കിലോ · 12 നവംബർ വരെ</div><div class="bs" style="margin-top:6px"><span class="s">ഇതുവരെയുള്ള തുക</span><span class="n">₹1,350</span></div><div class="bar"><div class="bt">പുറത്തെടുക്കുക</div><div class="bt">നീട്ടുക</div></div></div>
+    <div class="c"><div class="rw"><span class="b">ആലുവ ഗോഡൗൺ</span><span class="pl">സംഭരണത്തിൽ</span></div><div class="s" style="margin-top:4px">സവാള · 100 കിലോ · 8 ദിവസം ബാക്കി</div></div>
+    <div class="c"><div class="b">ചാലക്കുടി സ്റ്റോർ</div><div style="margin-top:4px"><span class="pl amber" style="white-space:normal;display:inline-block">ഉടമയുടെ മറുപടിക്ക് കാത്തിരിക്കുന്നു</span></div><div class="s" style="margin-top:6px">വാഴപ്പഴം · 50 കിലോ</div><div class="bt" style="margin-top:12px;flex:none">അപേക്ഷ റദ്ദാക്കുക</div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>ഹോം</div><div><i class="ti ti-plant-2"></i>വിളകൾ</div><div><i class="ti ti-receipt"></i>ഓർഡർ</div><div class="on"><i class="ti ti-building-warehouse"></i>സംഭരണം</div><div><i class="ti ti-user"></i>അക്കൗണ്ട്</div></div>
+</div></figure>
+</div>
+</section>
+
+<section class="role" id="partner">
+<h2>Delivery partner</h2>
+<p class="s" style="margin:0">Tabs: Home, Available, Deliveries, Account. ഹോം · ലഭ്യമായവ · ഡെലിവറി · അക്കൗണ്ട്</p>
+
+<h3>Home</h3>
+<div class="row3">
+<figure><figcaption>English</figcaption>
+<div class="ph">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><i class="ti ti-bell ic"></i></div>
+  <div class="pad">
+    <div class="h">Hello, Ravi.</div>
+    <div class="c" style="margin-top:14px"><div style="display:flex;align-items:center;gap:12px"><div style="width:40px;height:40px;border-radius:50%;background:var(--bg);color:var(--leaf);display:flex;align-items:center;justify-content:center;flex:none"><i class="ti ti-package" style="font-size:22px"></i></div><div>One delivery is waiting near you.</div></div><div class="pb" style="margin-top:12px">See available deliveries</div></div>
+    <div class="st"><div class="c"><div class="s">Today</div><div class="n">₹180</div></div><div class="c"><div class="s">Deliveries</div><div class="n">3</div></div><div class="c"><div class="s">This week</div><div class="n">₹920</div></div><div class="c"><div class="s">Rating</div><div class="n">4.7</div></div></div>
+    <div class="c"><div class="rw"><span class="b">Current delivery</span><span class="pl sky">On the way</span></div><div class="s" style="margin-top:6px">Tomato · 40 kg to Raju, Aluva</div><div class="bt" style="margin-top:12px;flex:none">Open delivery</div></div>
+    <div class="c"><div class="b">Earnings, last 7 days</div><div class="bars"><div style="height:30px"></div><div style="height:46px"></div><div style="height:24px"></div><div style="height:50px"></div><div style="height:40px"></div><div style="height:44px"></div><div style="height:52px"></div></div></div>
+  </div>
+  <div class="tabs"><div class="on"><i class="ti ti-home"></i>Home</div><div><i class="ti ti-package"></i>Available</div><div><i class="ti ti-truck-delivery"></i>Deliveries</div><div><i class="ti ti-user"></i>Account</div></div>
+</div></figure>
+<figure><figcaption>Malayalam</figcaption>
+<div class="ph ml">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><i class="ti ti-bell ic"></i></div>
+  <div class="pad">
+    <div class="h">നമസ്കാരം, രവി.</div>
+    <div class="c" style="margin-top:14px"><div style="display:flex;align-items:center;gap:12px"><div style="width:40px;height:40px;border-radius:50%;background:var(--bg);color:var(--leaf);display:flex;align-items:center;justify-content:center;flex:none"><i class="ti ti-package" style="font-size:22px"></i></div><div>ഒരു ഡെലിവറി നിങ്ങളുടെ അടുത്ത് കാത്തിരിക്കുന്നു.</div></div><div class="pb" style="margin-top:12px">ലഭ്യമായ ഡെലിവറികൾ കാണുക</div></div>
+    <div class="st"><div class="c"><div class="s">ഇന്നത്തെ സമ്പാദ്യം</div><div class="n">₹180</div></div><div class="c"><div class="s">പൂർത്തിയാക്കിയ ഡെലിവറികൾ</div><div class="n">3</div></div><div class="c"><div class="s">ഈ ആഴ്ചത്തെ സമ്പാദ്യം</div><div class="n">₹920</div></div><div class="c"><div class="s">നിങ്ങളുടെ റേറ്റിംഗ്</div><div class="n">4.7</div></div></div>
+    <div class="c"><div class="b">നിങ്ങളുടെ ഇപ്പോഴത്തെ ഡെലിവറി</div><div class="s" style="color:var(--sky);margin-top:2px">വഴിയിൽ</div><div style="margin-top:6px">തക്കാളി 40 കിലോ, രാജു, ആലുവ</div><div class="bt" style="margin-top:12px;flex:none">കൈകാര്യം ചെയ്യുക</div></div>
+    <div class="c"><div class="b">കഴിഞ്ഞ 7 ദിവസത്തെ സമ്പാദ്യം</div><div class="bars"><div style="height:30px"></div><div style="height:46px"></div><div style="height:24px"></div><div style="height:50px"></div><div style="height:40px"></div><div style="height:44px"></div><div style="height:52px"></div></div></div>
+  </div>
+  <div class="tabs"><div class="on"><i class="ti ti-home"></i>ഹോം</div><div><i class="ti ti-package"></i>ലഭ്യമായവ</div><div><i class="ti ti-truck-delivery"></i>ഡെലിവറി</div><div><i class="ti ti-user"></i>അക്കൗണ്ട്</div></div>
+</div></figure>
+</div>
+
+<h3>Available deliveries</h3>
+<div class="row3">
+<figure><figcaption>English. Every card has the same layout</figcaption>
+<div class="ph">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><i class="ti ti-bell ic"></i></div>
+  <div class="pad">
+    <div class="h">Available</div><div class="s" style="margin-top:2px">2 deliveries waiting for a partner</div>
+    <div class="c" style="margin-top:14px"><div class="rw"><div><div class="b">Tomato</div><div class="s">40 kg · 12 km</div></div><div style="text-align:right"><div class="s">You earn</div><div class="n" style="color:var(--forest)">₹40</div></div></div><div class="rt"><div class="ln"><span class="d1"></span><i></i><span class="d2"></span></div><div class="col"><div><div class="s">Pickup</div>Mani's farm, Kodakara</div><div><div class="s">Drop</div>Raju, Aluva market</div></div></div><div class="pb">Take this delivery</div></div>
+    <div class="c"><div class="rw"><div><div class="b">Banana</div><div class="s">25 kg · 7 km</div></div><div style="text-align:right"><div class="s">You earn</div><div class="n" style="color:var(--forest)">₹25</div></div></div><div class="rt"><div class="ln"><span class="d1"></span><i></i><span class="d2"></span></div><div class="col"><div><div class="s">Pickup</div>Suresh's farm, Chalakudy</div><div><div class="s">Drop</div>Anil, Angamaly</div></div></div><div class="pb">Take this delivery</div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>Home</div><div class="on"><i class="ti ti-package"></i>Available</div><div><i class="ti ti-truck-delivery"></i>Deliveries</div><div><i class="ti ti-user"></i>Account</div></div>
+</div></figure>
+<figure><figcaption>Malayalam</figcaption>
+<div class="ph ml">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><i class="ti ti-bell ic"></i></div>
+  <div class="pad">
+    <div class="h">ലഭ്യമായ ഡെലിവറികൾ</div><div class="s" style="margin-top:2px;font-size:12px">ആദ്യം എടുക്കുന്ന പങ്കാളിക്ക് ഇത് ലഭിക്കും.</div>
+    <div class="c" style="margin-top:14px"><div class="rw"><div><div class="b">തക്കാളി</div><div class="s">40 കിലോ · 12 കി.മീ</div></div><div style="text-align:right"><div class="s">നിങ്ങൾക്ക് ലഭിക്കും</div><div class="n" style="color:var(--forest)">₹40</div></div></div><div class="rt"><div class="ln"><span class="d1"></span><i></i><span class="d2"></span></div><div class="col"><div><div class="s">എടുക്കേണ്ട സ്ഥലം</div>മണിയുടെ കൃഷിയിടം, കൊടകര</div><div><div class="s">എത്തിക്കേണ്ട സ്ഥലം</div>രാജു, ആലുവ മാർക്കറ്റ്</div></div></div><div class="pb">ഈ ഡെലിവറി എടുക്കുക</div></div>
+    <div class="c"><div class="rw"><div><div class="b">വാഴപ്പഴം</div><div class="s">25 കിലോ · 7 കി.മീ</div></div><div style="text-align:right"><div class="s">നിങ്ങൾക്ക് ലഭിക്കും</div><div class="n" style="color:var(--forest)">₹25</div></div></div><div class="rt"><div class="ln"><span class="d1"></span><i></i><span class="d2"></span></div><div class="col"><div><div class="s">എടുക്കേണ്ട സ്ഥലം</div>സുരേഷിന്റെ കൃഷിയിടം, ചാലക്കുടി</div><div><div class="s">എത്തിക്കേണ്ട സ്ഥലം</div>അനിൽ, അങ്കമാലി</div></div></div><div class="pb">ഈ ഡെലിവറി എടുക്കുക</div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>ഹോം</div><div class="on"><i class="ti ti-package"></i>ലഭ്യമായവ</div><div><i class="ti ti-truck-delivery"></i>ഡെലിവറി</div><div><i class="ti ti-user"></i>അക്കൗണ്ട്</div></div>
+</div></figure>
+</div>
+
+<h3>Deliveries and Running late sheet</h3>
+<div class="row3">
+<figure><figcaption>English</figcaption>
+<div class="ph">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><i class="ti ti-bell ic"></i></div>
+  <div class="pad">
+    <div class="h">My deliveries</div>
+    <div class="c"><div class="rw"><span class="b">Tomato · 40 kg</span><span class="pl sky">On the way</span></div><div class="s" style="margin-top:4px">Picked up 10:20 · to Raju, Aluva</div><div class="al" style="margin-top:10px">Running about 30 min late: Traffic</div><div class="bar"><div class="bt"><i class="ti ti-phone" style="margin-right:6px"></i>Call Mani</div><div class="bt"><i class="ti ti-phone" style="margin-right:6px"></i>Call Raju</div></div><div class="pb" style="margin-top:12px">Mark delivered</div><div class="bar"><div class="bt">Update delay</div><div class="bt">Give back</div></div></div>
+    <div class="s" style="margin-top:16px;letter-spacing:.04em">DELIVERED</div>
+    <div class="c" style="margin-top:8px"><div class="rw"><span class="b">Onion · 30 kg</span><span class="n">₹80</span></div><div class="s">Delivered yesterday</div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>Home</div><div><i class="ti ti-package"></i>Available</div><div class="on"><i class="ti ti-truck-delivery"></i>Deliveries</div><div><i class="ti ti-user"></i>Account</div></div>
+</div></figure>
+<figure><figcaption>Malayalam</figcaption>
+<div class="ph ml">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><i class="ti ti-bell ic"></i></div>
+  <div class="pad">
+    <div class="h">എന്റെ ഡെലിവറികൾ</div>
+    <div class="c"><div class="rw"><span class="b">തക്കാളി · 40 കിലോ</span><span class="pl sky">വഴിയിൽ</span></div><div class="s" style="margin-top:4px">10:20-ന് എടുത്തു · രാജു, ആലുവ</div><div class="al" style="margin-top:10px">ഏകദേശം 30 മിനിറ്റ് വൈകും: ട്രാഫിക്</div><div class="bar"><div class="bt"><i class="ti ti-phone" style="margin-right:6px"></i>മണിയെ വിളിക്കുക</div><div class="bt"><i class="ti ti-phone" style="margin-right:6px"></i>രാജുവിനെ വിളിക്കുക</div></div><div class="pb" style="margin-top:12px">എത്തിച്ചു</div><div class="bar"><div class="bt">താമസം മാറ്റുക</div><div class="bt">തിരികെ നൽകുക</div></div></div>
+    <div class="s b" style="margin-top:16px">എത്തിച്ചവ</div>
+    <div class="c" style="margin-top:8px"><div class="rw"><span class="b">സവാള · 30 കിലോ</span><span class="n">₹80</span></div><div class="s">ഇന്നലെ എത്തിച്ചു</div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>ഹോം</div><div><i class="ti ti-package"></i>ലഭ്യമായവ</div><div class="on"><i class="ti ti-truck-delivery"></i>ഡെലിവറി</div><div><i class="ti ti-user"></i>അക്കൗണ്ട്</div></div>
+</div></figure>
+<figure><figcaption>Running late sheet (English)</figcaption>
+<div class="ph" style="background:rgba(0,0,0,.35);padding-top:110px">
+  <div style="background:#fff;border-radius:24px 24px 0 0;padding:20px">
+    <div class="h">Running late</div><div class="s">Tomato, 40 kg for Raju</div>
+    <div class="b" style="margin-top:14px">Why are you late?</div>
+    <div><span class="ch on">Traffic</span><span class="ch">Vehicle trouble</span><span class="ch">Weather</span><span class="ch">Waiting at the farm</span><span class="ch">Other</span></div>
+    <div class="b" style="margin-top:14px">About how long?</div>
+    <div><span class="ch">15 min</span><span class="ch on">30 min</span><span class="ch">45 min</span><span class="ch">60 min</span></div>
+    <div class="pb" style="margin-top:18px">Tell the buyer and farmer</div>
+  </div>
+</div></figure>
+<figure><figcaption>Running late sheet (Malayalam)</figcaption>
+<div class="ph ml" style="background:rgba(0,0,0,.35);padding-top:110px">
+  <div style="background:#fff;border-radius:24px 24px 0 0;padding:20px">
+    <div class="h">വൈകുന്നു</div><div class="s">രാജുവിനുള്ള തക്കാളി, 40 കിലോ</div>
+    <div class="b" style="margin-top:14px">വൈകാൻ കാരണം എന്താണ്?</div>
+    <div><span class="ch on">ട്രാഫിക്</span><span class="ch">വാഹനത്തിന് തകരാർ</span><span class="ch">കാലാവസ്ഥ</span><span class="ch">കൃഷിയിടത്തിൽ കാത്തിരിക്കുന്നു</span><span class="ch">മറ്റൊന്ന്</span></div>
+    <div class="b" style="margin-top:14px">ഏകദേശം എത്ര നേരം?</div>
+    <div><span class="ch">15 മിനിറ്റ്</span><span class="ch on">30 മിനിറ്റ്</span><span class="ch">45 മിനിറ്റ്</span><span class="ch">60 മിനിറ്റ്</span></div>
+    <div class="pb" style="margin-top:18px">ബയറെയും കർഷകനെയും അറിയിക്കുക</div>
+  </div>
+</div></figure>
+</div>
+</section>
+
+<section class="role" id="owner">
+<h2>Warehouse owner</h2>
+<p class="s" style="margin:0">Tabs: Home, Warehouses, Bookings, Account. ഹോം · സംഭരണശാല · ബുക്കിംഗ് · അക്കൗണ്ട്</p>
+
+<h3>Home</h3>
+<div class="row3">
+<figure><figcaption>English</figcaption>
+<div class="ph">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><i class="ti ti-bell ic"><span class="bd">2</span></i></div>
+  <div class="pad">
+    <div class="h">Hello, Jose.</div><div style="margin-top:2px">2 requests are waiting for your answer.</div>
+    <div class="al" style="margin-top:12px">2 new booking requests need an answer</div>
+    <div class="al">A farmer asked to extend a booking</div>
+    <div class="st"><div class="c"><div class="s">Warehouses</div><div class="n">2</div></div><div class="c"><div class="s">Active bookings</div><div class="n">5</div></div><div class="c"><div class="s">Space in use</div><div class="n">62%</div></div><div class="c"><div class="s">Booking income</div><div class="n">₹8,400</div></div></div>
+    <div class="c"><div class="b">Your warehouses</div>
+      <div style="margin-top:10px"><div class="rw"><span>Kodakara Cold Store</span><span class="n" style="font-size:13px">70%</span></div><div style="height:6px;background:var(--bg);border-radius:99px;margin-top:4px"><div style="width:70%;height:6px;background:var(--leaf);border-radius:99px"></div></div></div>
+      <div style="margin-top:10px"><div class="rw"><span>Aluva Godown</span><span class="n" style="font-size:13px">45%</span></div><div style="height:6px;background:var(--bg);border-radius:99px;margin-top:4px"><div style="width:45%;height:6px;background:var(--leaf);border-radius:99px"></div></div></div>
+    </div>
+  </div>
+  <div class="tabs"><div class="on"><i class="ti ti-home"></i>Home</div><div><i class="ti ti-building-warehouse"></i>Warehouses</div><div><i class="ti ti-calendar-event"></i>Bookings</div><div><i class="ti ti-user"></i>Account</div></div>
+</div></figure>
+<figure><figcaption>Malayalam</figcaption>
+<div class="ph ml">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><i class="ti ti-bell ic"><span class="bd">2</span></i></div>
+  <div class="pad">
+    <div class="h">നമസ്കാരം, ജോസ്.</div><div style="margin-top:2px">2 അപേക്ഷകൾ നിങ്ങളുടെ മറുപടിക്ക് കാത്തിരിക്കുന്നു.</div>
+    <div class="al" style="margin-top:12px">2 പുതിയ ബുക്കിംഗ് അപേക്ഷകൾക്ക് മറുപടി വേണം</div>
+    <div class="al">ഒരു കർഷകൻ ബുക്കിംഗ് നീട്ടാൻ അപേക്ഷിച്ചു</div>
+    <div class="st"><div class="c"><div class="s">സംഭരണശാലകൾ</div><div class="n">2</div></div><div class="c"><div class="s">നിലവിലെ ബുക്കിംഗുകൾ</div><div class="n">5</div></div><div class="c"><div class="s">ഉപയോഗത്തിലുള്ള സ്ഥലം</div><div class="n">62%</div></div><div class="c"><div class="s">ബുക്കിംഗ് വരുമാനം</div><div class="n">₹8,400</div></div></div>
+    <div class="c"><div class="b">നിങ്ങളുടെ സംഭരണശാലകൾ</div>
+      <div style="margin-top:10px"><div class="rw"><span>കൊടകര ശീതീകരണ കേന്ദ്രം</span><span class="n" style="font-size:13px">70%</span></div><div style="height:6px;background:var(--bg);border-radius:99px;margin-top:4px"><div style="width:70%;height:6px;background:var(--leaf);border-radius:99px"></div></div></div>
+      <div style="margin-top:10px"><div class="rw"><span>ആലുവ ഗോഡൗൺ</span><span class="n" style="font-size:13px">45%</span></div><div style="height:6px;background:var(--bg);border-radius:99px;margin-top:4px"><div style="width:45%;height:6px;background:var(--leaf);border-radius:99px"></div></div></div>
+    </div>
+  </div>
+  <div class="tabs"><div class="on"><i class="ti ti-home"></i>ഹോം</div><div><i class="ti ti-building-warehouse"></i>സംഭരണശാല</div><div><i class="ti ti-calendar-event"></i>ബുക്കിംഗ്</div><div><i class="ti ti-user"></i>അക്കൗണ്ട്</div></div>
+</div></figure>
+</div>
+
+<h3>My warehouses and Add warehouse form</h3>
+<div class="row3">
+<figure><figcaption>My warehouses (English). Pause and Remove are greyed out while bookings are open</figcaption>
+<div class="ph">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><i class="ti ti-bell ic"></i></div>
+  <div class="pad">
+    <div class="rw"><span class="h">My warehouses</span></div>
+    <div class="pb" style="margin-top:12px">Add warehouse</div>
+    <div class="c" style="padding:0;overflow:hidden"><div style="height:110px;background:#CFDCC5;display:flex;align-items:center;justify-content:center;color:var(--leaf)"><i class="ti ti-photo" style="font-size:32px"></i></div>
+      <div style="padding:14px 16px"><div class="rw"><span class="b">Kodakara Cold Store</span><span class="pl sky">Cold storage</span></div><div class="s" style="margin-top:2px">Kodakara</div><div class="bs" style="margin-top:8px"><span class="n">₹0.15<span class="s">/kg/day</span></span><span class="s">about ₹450 per quintal per month</span></div>
+      <div style="height:6px;background:var(--bg);border-radius:99px;margin-top:10px"><div style="width:70%;height:6px;background:var(--leaf);border-radius:99px"></div></div><div class="s" style="margin-top:4px">3,500 of 5,000 kg in use · 3 open bookings</div>
+      <div class="bar"><div class="bt">Change</div><div class="bt" style="color:#9AA096;background:#F4F6F1">Pause bookings</div><div class="bt" style="color:#9AA096;background:#F4F6F1">Remove</div></div>
+      <div class="s" style="margin-top:8px">To pause or remove, finish or decline its bookings first.</div></div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>Home</div><div class="on"><i class="ti ti-building-warehouse"></i>Warehouses</div><div><i class="ti ti-calendar-event"></i>Bookings</div><div><i class="ti ti-user"></i>Account</div></div>
+</div></figure>
+<figure><figcaption>Add warehouse (English)</figcaption>
+<div class="ph" style="background:rgba(0,0,0,.35);padding-top:40px">
+  <div style="background:#fff;border-radius:24px 24px 0 0;padding:20px">
+    <div class="h">Add warehouse</div><div class="s">Farmers decide by your photos. Show the inside and the entrance.</div>
+    <div class="s" style="margin-top:12px">Warehouse name</div><div class="in">Kodakara Cold Store</div>
+    <div class="s" style="margin-top:10px">Place</div><div class="in">Kodakara</div>
+    <div class="s" style="margin-top:10px">Type of storage</div><div><span class="ch on">Cold</span><span class="ch">Dry</span></div>
+    <div class="s" style="margin-top:10px">Total space (kg)</div><div class="in">5000</div>
+    <div class="s" style="margin-top:10px">Price per kg per day (₹)</div><div class="in">0.15</div>
+    <div class="s" style="margin-top:10px">Photos <b>2 of 5</b></div>
+    <div style="display:flex;gap:8px;margin-top:6px"><div style="width:64px;height:64px;background:#CFDCC5;border-radius:8px"></div><div style="width:64px;height:64px;background:#CFDCC5;border-radius:8px"></div><div style="width:64px;height:64px;border:1px dashed var(--leaf);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--leaf)"><i class="ti ti-plus"></i></div></div>
+    <div class="pb" style="margin-top:16px">Add warehouse</div>
+  </div>
+</div></figure>
+</div>
+
+<h3>Bookings and Decline sheet</h3>
+<div class="row3">
+<figure><figcaption>English</figcaption>
+<div class="ph">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><i class="ti ti-bell ic"><span class="bd">2</span></i></div>
+  <div class="pad">
+    <div class="h">Bookings</div>
+    <div class="seg"><div class="on">Requests</div><div>Current</div><div>Past</div></div>
+    <div class="c"><div class="rw"><span class="b">Rajan</span><span class="pl sky">New request</span></div><div class="s" style="margin-top:2px">Kodakara Cold Store</div><div style="margin-top:6px">Tomato, <span class="n" style="font-size:13px">200</span> kg</div><div class="s">12 Nov to 27 Nov</div><div class="bs" style="margin-top:6px"><span class="s">Amount</span><span class="n">₹3,000</span></div><div class="bar"><div class="bt" style="background:var(--forest);color:#fff">Accept</div><div class="bt">Decline</div></div></div>
+    <div class="c"><div class="rw"><span class="b">Suresh</span><span class="pl amber">Extension</span></div><div class="s" style="margin-top:2px">Aluva Godown</div><div style="margin-top:6px">Wants to stay until 2 Dec</div><div class="bs" style="margin-top:6px"><span class="s">New amount</span><span class="n">₹4,200</span></div><div class="bar"><div class="bt" style="background:var(--forest);color:#fff">Accept</div><div class="bt">Decline</div></div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>Home</div><div><i class="ti ti-building-warehouse"></i>Warehouses</div><div class="on"><i class="ti ti-calendar-event"></i>Bookings</div><div><i class="ti ti-user"></i>Account</div></div>
+</div></figure>
+<figure><figcaption>Malayalam</figcaption>
+<div class="ph ml">
+  <div class="tb"><span class="lg"><span class="mk"><i class="ti ti-leaf"></i></span>AgriChain</span><i class="ti ti-bell ic"><span class="bd">2</span></i></div>
+  <div class="pad">
+    <div class="h">ബുക്കിംഗുകൾ</div>
+    <div class="seg"><div class="on">അപേക്ഷകൾ</div><div>നിലവിലുള്ളവ</div><div>കഴിഞ്ഞവ</div></div>
+    <div class="c"><div class="rw"><span class="b">രാജൻ</span><span class="pl sky">പുതിയ അപേക്ഷ</span></div><div class="s" style="margin-top:2px">കൊടകര ശീതീകരണ കേന്ദ്രം</div><div style="margin-top:6px">തക്കാളി, <span class="n" style="font-size:13px">200</span> കിലോ</div><div class="s">12 നവംബർ മുതൽ 27 നവംബർ വരെ</div><div class="bs" style="margin-top:6px"><span class="s">തുക</span><span class="n">₹3,000</span></div><div class="bar"><div class="bt" style="background:var(--forest);color:#fff">സ്വീകരിക്കുക</div><div class="bt">നിരസിക്കുക</div></div></div>
+    <div class="c"><div class="rw"><span class="b">സുരേഷ്</span><span class="pl amber">നീട്ടാൻ</span></div><div class="s" style="margin-top:2px">ആലുവ ഗോഡൗൺ</div><div style="margin-top:6px">2 ഡിസംബർ വരെ തുടരാൻ ആഗ്രഹിക്കുന്നു</div><div class="bs" style="margin-top:6px"><span class="s">പുതിയ തുക</span><span class="n">₹4,200</span></div><div class="bar"><div class="bt" style="background:var(--forest);color:#fff">സ്വീകരിക്കുക</div><div class="bt">നിരസിക്കുക</div></div></div>
+  </div>
+  <div class="tabs"><div><i class="ti ti-home"></i>ഹോം</div><div><i class="ti ti-building-warehouse"></i>സംഭരണശാല</div><div class="on"><i class="ti ti-calendar-event"></i>ബുക്കിംഗ്</div><div><i class="ti ti-user"></i>അക്കൗണ്ട്</div></div>
+</div></figure>
+<figure><figcaption>Decline sheet (English)</figcaption>
+<div class="ph" style="background:rgba(0,0,0,.35);padding-top:150px">
+  <div style="background:#fff;border-radius:24px 24px 0 0;padding:20px">
+    <div class="h">Decline Rajan's request</div><div class="s">The space will be free for others.</div>
+    <div class="s" style="margin-top:12px">Reason (optional)</div>
+    <div class="in" style="height:80px;align-items:flex-start;padding-top:10px">For example: no space for onions that week</div>
+    <div class="bar"><div class="bt">Cancel</div><div class="bt" style="background:var(--danger);color:#fff;border-color:var(--danger)">Yes, decline</div></div>
+  </div>
+</div></figure>
+<figure><figcaption>Decline sheet (Malayalam)</figcaption>
+<div class="ph ml" style="background:rgba(0,0,0,.35);padding-top:150px">
+  <div style="background:#fff;border-radius:24px 24px 0 0;padding:20px">
+    <div class="h">രാജന്റെ അപേക്ഷ നിരസിക്കുക</div><div class="s">സ്ഥലം മറ്റുള്ളവർക്കായി ഒഴിവാകും.</div>
+    <div class="s" style="margin-top:12px">കാരണം (വേണമെങ്കിൽ)</div>
+    <div class="in" style="height:80px;align-items:flex-start;padding-top:10px">ഉദാഹരണത്തിന്: ആ ആഴ്ച സവാളയ്ക്ക് സ്ഥലമില്ല</div>
+    <div class="bar"><div class="bt">റദ്ദാക്കുക</div><div class="bt" style="background:var(--danger);color:#fff;border-color:var(--danger)">അതെ, നിരസിക്കുക</div></div>
+  </div>
+</div></figure>
+</div>
+</section>
+
+<footer>
+  <p><b>Not drawn yet:</b> Notifications, Forgot password, Order details, Rate sheet, Order placed, Add-to-cart sheet, Sell produce sheet, Book space sheet, farmer / partner / owner Account, Edit profile, Change password, Extend sheet, confirm dialogs and the empty states. They follow the same patterns and are listed in Mobile-Design.md.</p>
+  <p>Names, prices, places and counts in these mockups are made-up sample data. Rebuilt from the design agreed on 2026-11-03; the first drawings were shown in the Claude chat and could not be saved as files.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,22 @@
+# Dependencies & builds
+node_modules/
+dist/
+.expo/
+
+# Secrets (keep only .env.example files)
+.env
+.env.*
+!.env.example
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Claude local settings
+.claude/settings.local.json
+
+# Logs & uploads
+*.log
+uploads/

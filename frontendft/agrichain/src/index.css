@@ -1,0 +1,105 @@
+@import 'tailwindcss';
+
+/* AgriChain theme: forest greens on soft paper, Lora headings with Inter text */
+@theme {
+  --color-forest: #1e4d2b;
+  --color-forest-hover: #173d22;
+  --color-forest-deep: #173d22;
+  /* Landing page accent (the "How it works" pill and login icon) */
+  --color-lime: #8cc63f;
+  --color-lime-hover: #9dd352;
+  --color-leaf: #4a7c3a;
+  --color-sage: #eaf1e4;
+  --color-sage-strong: #c9ddbf;
+  --color-paper: #fafaf7;
+  --color-line: #e5e9e0;
+  --color-line-soft: #eef1ea;
+  --color-ink: #1c211b;
+  --color-muted: #5b6158;
+  --color-danger: #b42318;
+  --color-danger-soft: #fef3f2;
+  --color-amber: #8a5a00;
+  --color-amber-soft: #fff4df;
+  --color-sky: #175cd3;
+  --color-sky-soft: #eff8ff;
+
+  --font-serif: 'Lora', 'Noto Serif Malayalam', Georgia, serif;
+  --font-sans: 'Inter', 'Noto Sans Malayalam', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-variant-numeric: tabular-nums;
+    -webkit-font-smoothing: antialiased;
+    /* Always keep room for the scrollbar, so the centred page doesn't jump sideways
+       when moving between long pages (with a scrollbar) and short ones (without) */
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    min-height: 100dvh;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    text-wrap: balance;
+  }
+
+  button,
+  [role='button'],
+  a {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-leaf);
+    outline-offset: 2px;
+  }
+
+  dialog::backdrop {
+    background: rgb(28 33 27 / 0.45);
+  }
+}
+
+@keyframes panel-in {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+}
+
+/* Market price ticker: the track holds two copies, so moving by half loops seamlessly */
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes toast-in {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+}
+
+/* "How it works" on the landing page glides down, unless reduced motion is on */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

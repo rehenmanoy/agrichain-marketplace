@@ -1,0 +1,397 @@
+### AgriChain API examples
+### Works with the VS Code "REST Client" extension or the JetBrains HTTP client.
+### Run the login requests first: their tokens are reused below.
+
+@base = http://localhost:5000
+@password = AgriChain@123
+
+### Health
+GET {{base}}/health
+
+### Regions (for the register form)
+GET {{base}}/api/regions
+
+### Register
+POST {{base}}/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Demo Farmer",
+  "phone": "9123456780",
+  "password": "{{password}}",
+  "role": "FARMER",
+  "region_id": 1,
+  "base_location": "Erumely"
+}
+
+### Login as farmer
+# @name farmerLogin
+POST {{base}}/api/auth/login
+Content-Type: application/json
+
+{ "phone": "9991110001", "password": "{{password}}" }
+
+### Login as buyer
+# @name buyerLogin
+POST {{base}}/api/auth/login
+Content-Type: application/json
+
+{ "phone": "9791118801", "password": "{{password}}" }
+
+### Login as warehouse owner
+# @name ownerLogin
+POST {{base}}/api/auth/login
+Content-Type: application/json
+
+{ "phone": "9771238800", "password": "{{password}}" }
+
+### Login as delivery partner
+# @name partnerLogin
+POST {{base}}/api/auth/login
+Content-Type: application/json
+
+{ "phone": "9000011111", "password": "{{password}}" }
+
+@farmer = {{farmerLogin.response.body.token}}
+@buyer = {{buyerLogin.response.body.token}}
+@owner = {{ownerLogin.response.body.token}}
+@partner = {{partnerLogin.response.body.token}}
+
+### Who am I
+GET {{base}}/api/auth/me
+Authorization: Bearer {{farmer}}
+
+### Produce catalogue
+GET {{base}}/api/produce
+
+### Today's market price for produce 1
+GET {{base}}/api/produce/1/price
+
+### Farmer: create a listing (priced at today's market rate)
+POST {{base}}/api/listings
+Authorization: Bearer {{farmer}}
+Content-Type: application/json
+
+{ "produce_id": 1, "available_qty": 40 }
+
+### Farmer: create a listing at their own price (must be within ±20% of market)
+POST {{base}}/api/listings
+Authorization: Bearer {{farmer}}
+Content-Type: application/json
+
+{ "produce_id": 2, "available_qty": 60, "listing_price": 40 }
+
+### Farmer: my listings
+GET {{base}}/api/listings/mine
+Authorization: Bearer {{farmer}}
+
+### Farmer: update quantity and/or price
+PATCH {{base}}/api/listings/1
+Authorization: Bearer {{farmer}}
+Content-Type: application/json
+
+{ "available_qty": 25, "listing_price": 30 }
+
+### Farmer: stop selling listing 1, then sell it again
+PATCH {{base}}/api/listings/1/deactivate
+Authorization: Bearer {{farmer}}
+
+###
+PATCH {{base}}/api/listings/1
+Authorization: Bearer {{farmer}}
+Content-Type: application/json
+
+{ "is_active": true }
+
+### Farmer: delete listing 1 (refused while it has open orders)
+DELETE {{base}}/api/listings/1
+Authorization: Bearer {{farmer}}
+
+### Buyer: browse listings in my region
+GET {{base}}/api/listings?region_id=1&category=VEGETABLE
+
+### Any user: swap my token for a fresh 1-hour one (refused 12 hours after the original login)
+POST {{base}}/api/auth/refresh
+Authorization: Bearer {{buyer}}
+
+### Buyer: add to my cart (adding the same listing again adds up the quantity)
+POST {{base}}/api/cart
+Authorization: Bearer {{buyer}}
+Content-Type: application/json
+
+{ "listing_id": 1, "quantity": 3 }
+
+### Buyer: my cart, grouped by farmer with live prices and delivery fees
+GET {{base}}/api/cart
+Authorization: Bearer {{buyer}}
+
+### Buyer: change a cart item's quantity
+PATCH {{base}}/api/cart/items/1
+Authorization: Bearer {{buyer}}
+Content-Type: application/json
+
+{ "quantity": 4 }
+
+### Buyer: remove a cart item
+DELETE {{base}}/api/cart/items/1
+Authorization: Bearer {{buyer}}
+
+### Buyer: empty the cart
+DELETE {{base}}/api/cart
+Authorization: Bearer {{buyer}}
+
+### Buyer: check out the cart (one order per farmer, returns the new orders)
+POST {{base}}/api/cart/checkout
+Authorization: Bearer {{buyer}}
+Content-Type: application/json
+
+{ "delivery_address": "Shop 4, Erumely Market Road" }
+
+### Buyer: order items directly, without the cart (also one order per farmer)
+POST {{base}}/api/orders
+Authorization: Bearer {{buyer}}
+Content-Type: application/json
+
+{ "items": [{ "listing_id": 1, "quantity": 3 }], "delivery_address": "Shop 4, Erumely Market Road" }
+
+### Buyer: my orders
+GET {{base}}/api/orders/mine
+Authorization: Bearer {{buyer}}
+
+### Farmer: incoming pending orders
+GET {{base}}/api/orders/incoming?status=PENDING
+Authorization: Bearer {{farmer}}
+
+### Farmer: confirm order 1
+PATCH {{base}}/api/orders/1/confirm
+Authorization: Bearer {{farmer}}
+
+### Partner: confirmed orders waiting for pickup in my region
+GET {{base}}/api/deliveries/available
+Authorization: Bearer {{partner}}
+
+### Partner: pick up order 1
+PATCH {{base}}/api/deliveries/1/accept
+Authorization: Bearer {{partner}}
+
+### Partner: mark order 1 delivered
+PATCH {{base}}/api/deliveries/1/complete
+Authorization: Bearer {{partner}}
+
+### Partner: report order 1 is running late (reason: TRAFFIC, VEHICLE, WEATHER, WAITING_AT_FARM, OTHER; minutes 5–240)
+PATCH {{base}}/api/deliveries/1/delay
+Authorization: Bearer {{partner}}
+Content-Type: application/json
+
+{ "reason": "TRAFFIC", "minutes": 30 }
+
+### Partner: give order 1 back so another partner can take it
+PATCH {{base}}/api/deliveries/1/release
+Authorization: Bearer {{partner}}
+
+### Partner: my deliveries
+GET {{base}}/api/deliveries/mine
+Authorization: Bearer {{partner}}
+
+### Buyer: review a delivered order
+POST {{base}}/api/orders/1/review
+Authorization: Bearer {{buyer}}
+Content-Type: application/json
+
+{ "rating": 5, "comment": "Very fresh, delivered on time" }
+
+### Public: a farmer's reviews
+GET {{base}}/api/reviews?farmer_id=1
+
+### Buyer: rate the delivery partner of a delivered order
+POST {{base}}/api/orders/1/partner-review
+Authorization: Bearer {{buyer}}
+Content-Type: application/json
+
+{ "rating": 4, "comment": "Arrived on time" }
+
+### Public: a delivery partner's / warehouse's reviews
+GET {{base}}/api/reviews/partners?partner_id=1
+
+###
+GET {{base}}/api/reviews/warehouses?warehouse_id=1
+
+### Farmer: rate a warehouse after taking produce out
+POST {{base}}/api/warehouse-bookings/1/review
+Authorization: Bearer {{farmer}}
+Content-Type: application/json
+
+{ "rating": 5, "comment": "Clean and well kept" }
+
+### Farmer: add my own produce type (no market price)
+POST {{base}}/api/produce
+Authorization: Bearer {{farmer}}
+Content-Type: application/json
+
+{ "name": "Drumstick leaves", "category": "VEGETABLE" }
+
+### Account: change name and place
+PATCH {{base}}/api/auth/me
+Authorization: Bearer {{farmer}}
+Content-Type: application/json
+
+{ "name": "Demo Farmer", "base_location": "Erumely" }
+
+### Account: change password (returns a fresh login)
+POST {{base}}/api/auth/change-password
+Authorization: Bearer {{farmer}}
+Content-Type: application/json
+
+{ "current_password": "{{password}}", "new_password": "NewPassword@123" }
+
+### Forgot password: ask for a code (printed in the server console; dev_code in the answer when RESET_CODE_IN_RESPONSE is on)
+POST {{base}}/api/auth/forgot-password
+Content-Type: application/json
+
+{ "phone": "9991110001" }
+
+### Forgot password: use the code
+POST {{base}}/api/auth/reset-password
+Content-Type: application/json
+
+{ "phone": "9991110001", "code": "123456", "new_password": "{{password}}" }
+
+### Notifications: mine, then mark read
+GET {{base}}/api/notifications
+Authorization: Bearer {{farmer}}
+
+###
+POST {{base}}/api/notifications/read-all
+Authorization: Bearer {{farmer}}
+
+### Dashboards (stats depend on the role in the token)
+GET {{base}}/api/dashboard
+Authorization: Bearer {{farmer}}
+
+###
+GET {{base}}/api/dashboard
+Authorization: Bearer {{buyer}}
+
+###
+GET {{base}}/api/dashboard
+Authorization: Bearer {{partner}}
+
+###
+GET {{base}}/api/dashboard
+Authorization: Bearer {{owner}}
+
+### Buyer: cancel a pending order
+PATCH {{base}}/api/orders/2/cancel
+Authorization: Bearer {{buyer}}
+
+### Owner: create a warehouse (a multipart form: the fields plus 2 to 5 photos, JPEG/PNG/WebP up to 5 MB each)
+POST {{base}}/api/warehouses
+Authorization: Bearer {{owner}}
+Content-Type: multipart/form-data; boundary=WarehouseBoundary
+
+--WarehouseBoundary
+Content-Disposition: form-data; name="name"
+
+Erumely Dry Warehouse
+--WarehouseBoundary
+Content-Disposition: form-data; name="location"
+
+Town Road
+--WarehouseBoundary
+Content-Disposition: form-data; name="total_capacity_kg"
+
+2000
+--WarehouseBoundary
+Content-Disposition: form-data; name="price_per_kg_per_day"
+
+0.10
+--WarehouseBoundary
+Content-Disposition: form-data; name="is_cold_storage"
+
+false
+--WarehouseBoundary
+Content-Disposition: form-data; name="photos"; filename="inside.jpg"
+Content-Type: image/jpeg
+
+< ./inside.jpg
+--WarehouseBoundary
+Content-Disposition: form-data; name="photos"; filename="entrance.jpg"
+Content-Type: image/jpeg
+
+< ./entrance.jpg
+--WarehouseBoundary--
+
+### Owner: change a warehouse (price only affects new requests; pausing needs no open bookings)
+PATCH {{base}}/api/warehouses/1
+Authorization: Bearer {{owner}}
+Content-Type: application/json
+
+{ "price_per_kg_per_day": 0.12, "total_capacity_kg": 1500 }
+
+### Owner: remove a warehouse (refused while it has waiting or approved bookings)
+DELETE {{base}}/api/warehouses/1
+Authorization: Bearer {{owner}}
+
+### Owner: remove photo 1 of warehouse 1 (a warehouse always keeps at least 2)
+DELETE {{base}}/api/warehouses/1/photos/1
+Authorization: Bearer {{owner}}
+
+### Browse cold storage in region 1
+GET {{base}}/api/warehouses?region_id=1&cold_storage=true
+
+### Farmer: how much space is free on every day of 1-15 Nov
+GET {{base}}/api/warehouses/1/availability?from=2026-11-01&to=2026-11-15
+Authorization: Bearer {{farmer}}
+
+### Farmer: ask for space (the owner has to accept; days are counted inclusively)
+POST {{base}}/api/warehouse-bookings
+Authorization: Bearer {{farmer}}
+Content-Type: application/json
+
+{ "warehouse_id": 1, "produce_id": 1, "quantity_kg": 100, "start_date": "2026-11-01", "end_date": "2026-11-15" }
+
+### Farmer: my bookings
+GET {{base}}/api/warehouse-bookings/mine
+Authorization: Bearer {{farmer}}
+
+### Owner: bookings at my warehouses
+GET {{base}}/api/warehouse-bookings/incoming
+Authorization: Bearer {{owner}}
+
+### Owner: accept booking 1
+PATCH {{base}}/api/warehouse-bookings/1/approve
+Authorization: Bearer {{owner}}
+
+### Owner: decline booking 1 with a reason
+PATCH {{base}}/api/warehouse-bookings/1/reject
+Authorization: Bearer {{owner}}
+Content-Type: application/json
+
+{ "note": "No room for onions that week" }
+
+### Farmer: cancel a waiting request (or an approved booking that has not started)
+PATCH {{base}}/api/warehouse-bookings/1/cancel
+Authorization: Bearer {{farmer}}
+
+### Farmer: take the produce out (pays for the days used; overdue days count)
+PATCH {{base}}/api/warehouse-bookings/1/release
+Authorization: Bearer {{farmer}}
+
+### Farmer: ask to keep it longer
+POST {{base}}/api/warehouse-bookings/1/extend
+Authorization: Bearer {{farmer}}
+Content-Type: application/json
+
+{ "new_end_date": "2026-11-30" }
+
+### Owner: accept or decline the extension
+PATCH {{base}}/api/warehouse-bookings/1/extension/approve
+Authorization: Bearer {{owner}}
+
+###
+PATCH {{base}}/api/warehouse-bookings/1/extension/reject
+Authorization: Bearer {{owner}}
+
+### Farmer: withdraw the extension request
+PATCH {{base}}/api/warehouse-bookings/1/extension/cancel
+Authorization: Bearer {{farmer}}
